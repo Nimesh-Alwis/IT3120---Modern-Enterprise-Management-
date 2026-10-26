@@ -1,0 +1,1868 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>IT3120 Practice MCQ · 75 Questions Comprehensive Exam Suite (Lectures 01–05)</title>
+<style>
+:root{
+  --ink:#1f2937; --muted:#4b5563; --faint:#9ca3af; --navy:#07166f; --navy2:#00007a;
+  --orange:#ff7300; --line:#e5e7eb; --bg:#eef0f6; --soft:#f0f3fb;
+  --ok:#15803d; --okbg:#ecfdf3; --bad:#b91c1c; --badbg:#fef2f2; --part:#b45309; --partbg:#fffbeb;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font:16px/1.6 "Segoe UI",Arial,sans-serif;margin:0;padding:20px}
+.page{max-width:1180px;margin:0 auto;background:#fff;padding:0 32px 32px;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,.08)}
+h1,h2,h3{color:var(--navy);margin:12px 0}
+code{background:#f3f4f6;border-radius:5px;padding:1px 5px;font:0.9em ui-monospace,Consolas,monospace}
+pre{background:#f3f4f6;border-radius:8px;padding:12px 14px;overflow-x:auto;font:14px/1.5 ui-monospace,Consolas,monospace;margin:10px 0}
+pre code{background:none;padding:0}
+button{font:inherit}
+.btn{background:var(--navy);color:#fff;border:none;padding:8px 16px;border-radius:8px;cursor:pointer;font-weight:600;font-size:.9rem;transition:background .15s}
+.btn:hover{background:var(--navy2)}
+.btn.ghost{background:#fff;color:var(--navy);border:1px solid #c7cce0}
+.btn.ghost:hover{background:var(--soft)}
+.btn.orange{background:var(--orange)}
+.btn.orange:hover{background:#e26600}
+.btn:disabled{opacity:.45;cursor:not-allowed}
+
+/* toolbar */
+.toolbar{position:sticky;top:0;z-index:30;background:#fff;display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;padding:10px 0;border-bottom:1px solid var(--line)}
+.idbox{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+.idbox label{font-weight:700;color:var(--navy);font-size:.85rem;display:flex;align-items:center;gap:6px}
+.idbox input{border:1px solid var(--line);padding:6px 10px;border-radius:6px;font:inherit;font-size:.9rem;width:150px}
+.idbox input:focus{outline:none;border-color:var(--navy);box-shadow:0 0 0 3px rgba(7,22,111,.12)}
+.tools{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.mini{display:flex;align-items:center;gap:8px;font-size:.85rem;color:var(--muted);font-weight:600}
+.mini .bar{width:90px;height:6px;background:var(--line);border-radius:99px;overflow:hidden}
+.mini .bar i{display:block;height:100%;background:var(--orange);width:0;transition:width .25s}
+
+/* header */
+.banner{background:var(--navy);color:#fff;margin:16px 0 0;border-radius:10px;padding:20px 24px;position:relative;overflow:hidden}
+.banner:after{content:"";position:absolute;right:-40px;top:-40px;width:180px;height:180px;border-radius:50%;border:28px solid rgba(255,115,0,.85)}
+.banner .meta{font-size:.82rem;opacity:.85;letter-spacing:.3px}
+.banner h1{color:#fff;font-size:1.65rem;margin:6px 0 4px;max-width:80%}
+.banner .covers{font-size:.92rem;opacity:.92;max-width:80%}
+.pill{display:inline-block;background:var(--orange);color:#fff;font-size:.72rem;font-weight:700;letter-spacing:1.4px;padding:3px 11px;border-radius:999px;text-transform:uppercase}
+.setnav{display:flex;flex-wrap:wrap;gap:6px;margin:12px 0 0;align-items:center}
+.setnav a{font-size:.8rem;text-decoration:none;color:var(--navy);border:1px solid #c7cce0;padding:4px 10px;border-radius:999px;background:#fff;transition:all .15s}
+.setnav a:hover{background:var(--soft);border-color:var(--navy)}
+.rules{border-left:4px solid var(--navy);background:var(--soft);padding:12px 18px;border-radius:8px;margin:16px 0;font-size:.92rem}
+.rules ul{margin:6px 0 0;padding-left:20px}
+
+/* layout */
+.layout{display:grid;grid-template-columns:minmax(0,1fr) 290px;gap:24px;align-items:start}
+aside{position:sticky;top:72px}
+.panel{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:#fff}
+.panel + .panel{margin-top:12px}
+.panel h3{font-size:.95rem;margin:0 0 10px;display:flex;justify-content:space-between;align-items:center}
+.timer{font:600 .9rem ui-monospace,Consolas,monospace;color:var(--muted)}
+.progress{height:10px;background:var(--line);border-radius:99px;overflow:hidden;margin:4px 0 10px}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--navy),var(--orange));transition:width .3s}
+.tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
+.tile{background:var(--soft);border-radius:8px;padding:6px 4px;text-align:center}
+.tile b{display:block;font-size:1.25rem;color:var(--navy);line-height:1.2}
+.tile span{font-size:.7rem;color:var(--muted);text-transform:uppercase;letter-spacing:.5px}
+.tile.flag b{color:var(--orange)}
+.split{font-size:.78rem;color:var(--muted);margin-top:8px}
+.nav{display:grid;grid-template-columns:repeat(5,1fr);gap:5px;max-height:480px;overflow-y:auto;padding-right:2px}
+.nav button{position:relative;border:1px solid #c7cce0;background:#fff;color:var(--ink);border-radius:6px;height:32px;cursor:pointer;font-weight:600;font-size:.8rem;transition:all .15s}
+.nav button:hover{border-color:var(--navy)}
+.nav button.ans{background:var(--navy);color:#fff;border-color:var(--navy)}
+.nav button.cur{outline:2px solid var(--orange);outline-offset:1px}
+.nav button.flg:after{content:"";position:absolute;top:-4px;right:-4px;width:9px;height:9px;border-radius:50%;background:var(--orange);border:2px solid #fff}
+.nav button.r-ok{background:var(--ok);border-color:var(--ok);color:#fff}
+.nav button.r-bad{background:var(--bad);border-color:var(--bad);color:#fff}
+.nav button.r-part{background:var(--part);border-color:var(--part);color:#fff}
+.nav button.r-skip{background:#fff;border:2px dashed var(--bad);color:var(--bad)}
+.legend{display:flex;flex-wrap:wrap;gap:4px 12px;font-size:.72rem;color:var(--muted);margin-top:10px}
+.legend span{display:inline-flex;align-items:center;gap:5px}
+.legend i{width:11px;height:11px;border-radius:3px;display:inline-block;border:1px solid #c7cce0}
+.submit-wrap{margin-top:12px;display:grid;gap:8px}
+.submit-wrap .btn{width:100%;padding:10px}
+
+/* questions */
+.viewbar{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;margin:4px 0 12px}
+.seg{display:inline-flex;border:1px solid #c7cce0;border-radius:8px;overflow:hidden}
+.seg button{border:none;background:#fff;color:var(--navy);padding:6px 12px;cursor:pointer;font-size:.85rem;font-weight:600}
+.seg button.on{background:var(--navy);color:#fff}
+.hint{font-size:.78rem;color:var(--faint)}
+.q{border:1px solid var(--line);border-left:4px solid #c7cce0;border-radius:10px;padding:16px 20px;margin:0 0 16px;background:#fff;scroll-margin-top:80px}
+.q.answered{border-left-color:var(--navy)}
+.q.flagged{border-left-color:var(--orange)}
+.q-head{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.q-num{font-weight:700;color:var(--navy);font-size:1.02rem}
+.q-num small{color:var(--faint);font-weight:600}
+.chip{font-size:.72rem;background:#f3f4f8;color:var(--navy);padding:3px 10px;border-radius:999px;font-weight:700;border:1px solid #e2e8f0}
+.badge{font-size:.72rem;font-weight:700;padding:2px 9px;border-radius:999px;letter-spacing:.2px}
+.badge.single{background:#e0e7ff;color:var(--navy)}
+.badge.multi{background:#ffedd5;color:#9a3412}
+.flag-btn{margin-left:auto;border:1px solid #c7cce0;background:#fff;color:var(--muted);border-radius:7px;padding:3px 10px;font-size:.78rem;cursor:pointer;font-weight:600}
+.flag-btn[aria-pressed="true"]{background:#fff4ec;border-color:var(--orange);color:#c2410c}
+.q-text{margin:4px 0 10px;font-size:1.02rem}
+.tbl{overflow-x:auto}
+.tbl table{border-collapse:collapse;margin:8px 0 12px;font-size:.9rem;min-width:320px;width:100%}
+.tbl th,.tbl td{border:1px solid var(--line);padding:6px 12px;text-align:left}
+.tbl th{background:#f3f4f8;color:var(--navy);font-weight:700}
+.opts{display:grid;gap:8px}
+.opt{display:flex;align-items:flex-start;gap:10px;border:1px solid var(--line);border-radius:8px;padding:9px 12px;cursor:pointer;transition:background .15s,border-color .15s;position:relative}
+.opt:hover{background:#fafbff;border-color:#c7cce0}
+.opt input{margin:4px 0 0;accent-color:var(--navy);width:17px;height:17px;flex:none;cursor:pointer}
+.opt .L{flex:none;width:24px;height:24px;border-radius:6px;background:#f3f4f8;color:var(--navy);font-weight:700;font-size:.82rem;display:flex;align-items:center;justify-content:center}
+.opt .T{flex:1;min-width:0;overflow-wrap:anywhere}
+.q-text,.feedback{overflow-wrap:anywhere}
+main{min-width:0}
+.opt.sel{border-color:var(--navy);background:var(--soft)}
+.opt.sel .L{background:var(--navy);color:#fff}
+.opt .mark{flex:none;font-size:.75rem;font-weight:700;padding:2px 8px;border-radius:999px;align-self:center}
+.q-foot{display:flex;justify-content:space-between;align-items:center;margin-top:8px;min-height:24px}
+.clear-btn{border:none;background:none;color:var(--muted);text-decoration:underline;cursor:pointer;font-size:.8rem;padding:0}
+.sel-count{font-size:.78rem;color:var(--faint)}
+.pager{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:4px}
+.pager .where{font-size:.88rem;color:var(--muted);font-weight:600}
+
+/* results on cards */
+.submitted .opt{cursor:default}
+.submitted .opt:hover{background:inherit}
+.opt.c-sel{border-color:var(--ok);background:var(--okbg)}
+.opt.c-sel .L{background:var(--ok);color:#fff}
+.opt.c-sel .mark{background:var(--ok);color:#fff}
+.opt.w-sel{border-color:var(--bad);background:var(--badbg)}
+.opt.w-sel .L{background:var(--bad);color:#fff}
+.opt.w-sel .mark{background:var(--bad);color:#fff}
+.opt.miss{border:2px dashed var(--ok)}
+.opt.miss .mark{background:var(--okbg);color:var(--ok)}
+.q.res-ok{border-left-color:var(--ok)}
+.q.res-bad,.q.res-skip{border-left-color:var(--bad)}
+.q.res-part{border-left-color:var(--part)}
+.feedback{margin-top:12px;border-radius:8px;padding:12px 16px;font-size:.92rem;line-height:1.6}
+.feedback .verdict{font-weight:700;margin-bottom:6px;font-size:.95rem}
+.feedback .src{font-size:.78rem;color:var(--muted);margin-top:8px;border-top:1px dashed rgba(0,0,0,.15);padding-top:4px}
+.feedback.ok{background:var(--okbg);border:1px solid #bbf7d0}
+.feedback.ok .verdict{color:var(--ok)}
+.feedback.bad{background:var(--badbg);border:1px solid #fecaca}
+.feedback.bad .verdict{color:var(--bad)}
+.feedback.part{background:var(--partbg);border:1px solid #fde68a}
+.feedback.part .verdict{color:var(--part)}
+
+/* modes */
+.mode-one .q{display:none}
+.mode-one .q.current{display:block}
+.mode-all .pager{display:none}
+.filter-wrong .q.res-ok{display:none}
+
+/* results panel */
+#results:empty{display:none}
+.results{border:1px solid var(--line);border-radius:12px;padding:20px 22px;margin:0 0 20px;background:linear-gradient(180deg,#f7f8fd,#fff)}
+.res-top{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.ring{--p:0;width:120px;height:120px;border-radius:50%;background:conic-gradient(var(--c,var(--navy)) calc(var(--p)*1%),var(--line) 0);display:grid;place-items:center;flex:none}
+.ring div{width:94px;height:94px;border-radius:50%;background:#fff;display:grid;place-items:center;text-align:center;line-height:1.1}
+.ring b{font-size:1.6rem;color:var(--navy)}
+.ring span{font-size:.75rem;color:var(--muted)}
+.res-main h2{margin:0 0 4px}
+.res-main p{margin:2px 0;color:var(--muted);font-size:.92rem}
+.res-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:16px 0}
+.res-stats div{background:#fff;border:1px solid var(--line);border-radius:8px;padding:8px;text-align:center}
+.res-stats b{display:block;font-size:1.15rem;color:var(--navy)}
+.res-stats span{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:.4px}
+.topics{width:100%;border-collapse:collapse;font-size:.88rem}
+.topics td{padding:6px 8px;border-bottom:1px solid var(--line)}
+.topics td:nth-child(2){width:100px;text-align:right;font-weight:600;color:var(--navy)}
+.topics td:nth-child(3){width:36%}
+.tbar{height:8px;background:var(--line);border-radius:99px;overflow:hidden}
+.tbar i{display:block;height:100%}
+.res-actions{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+
+/* modal + toast */
+.modal{position:fixed;inset:0;background:rgba(15,23,42,.45);display:flex;align-items:center;justify-content:center;z-index:50;padding:16px}
+.modal[hidden]{display:none}
+.modal .box{background:#fff;border-radius:12px;max-width:440px;width:100%;padding:20px 22px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.modal h3{margin:0 0 8px}
+.modal p{margin:6px 0;color:var(--muted)}
+.modal .row{display:flex;justify-content:flex-end;gap:8px;margin-top:16px}
+#toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(20px);background:var(--ink);color:#fff;padding:9px 16px;border-radius:8px;font-size:.88rem;opacity:0;pointer-events:none;transition:all .25s;z-index:60;max-width:90vw}
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+#mbar{display:none}
+.submitted .q-foot{display:none}
+footer{margin-top:24px;padding-top:12px;border-top:1px solid var(--line);font-size:.8rem;color:var(--faint);text-align:center}
+
+@media (max-width:900px){
+  body{padding:0}
+  .page{padding:0 16px 24px;border-radius:0}
+  .layout{grid-template-columns:minmax(0,1fr)}
+  aside{position:static;order:-1}
+  .banner h1,.banner .covers{max-width:100%}
+  .banner:after{display:none}
+  .res-stats{grid-template-columns:repeat(2,1fr)}
+  .nav{grid-template-columns:repeat(10,1fr)}
+  .idbox input{width:120px}
+  .toolbar{position:static}
+  aside{top:auto}
+  .q,.results{scroll-margin-top:12px}
+  body{padding-bottom:64px}
+  #mbar{display:flex;position:fixed;left:0;right:0;bottom:0;z-index:40;background:var(--navy);color:#fff;align-items:center;gap:10px;padding:10px 16px;font-size:.88rem;font-weight:600;box-shadow:0 -4px 14px rgba(0,0,0,.18)}
+  #mbar .bar{flex:1;height:6px;background:rgba(255,255,255,.25);border-radius:99px;overflow:hidden}
+  #mbar .bar i{display:block;height:100%;width:0;background:var(--orange)}
+  #mbar button{background:var(--orange);color:#fff;border:none;border-radius:7px;padding:6px 12px;font-weight:700;font-size:.82rem;cursor:pointer}
+}
+@media (max-width:520px){
+  .nav{grid-template-columns:repeat(5,1fr)}
+  .q{padding:14px}
+  .mini .bar{display:none}
+}
+@media print{
+  body{background:#fff;padding:0}
+  .page{box-shadow:none;padding:0;max-width:none}
+  .toolbar{position:static;border:none}
+  .tools .btn,.mini,aside,#mbar,.pager,.viewbar,.flag-btn,.clear-btn,.sel-count,.setnav,.res-actions,#toast,.modal{display:none!important}
+  .layout{display:block}
+  .mode-one .q,.filter-wrong .q{display:block!important}
+  .q{break-inside:avoid}
+  .banner{background:#fff;color:var(--navy);border:2px solid var(--navy)}
+  .banner h1{color:var(--navy)}
+  .idbox input{border:1px solid #000}
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="toolbar">
+    <div class="idbox">
+      <label>Student ID <input id="sid" autocomplete="off" placeholder="IT2xxxxxxx"></label>
+      <label>Name <input id="sname" autocomplete="off" placeholder="optional"></label>
+    </div>
+    <div class="tools">
+      <div class="mini"><div class="bar"><i id="miniBar"></i></div><span id="miniTxt">0/75</span></div>
+      <button class="btn ghost" id="btnPrint" type="button">Print / Save as PDF</button>
+      <button class="btn" id="btnDownload" type="button">Download HTML</button>
+    </div>
+  </div>
+
+  <header class="banner">
+    <div class="meta">BSc (Hons) in Information Technology · IT3120 – Modern Enterprise Management (MEM) · Y3.S1 – 2026</div>
+    <div style="margin-top:8px"><span class="pill">Comprehensive Exam Suite · 75 Questions (15 per Lecture)</span></div>
+    <h1>Management, Marketing, Economics, HRM &amp; Financial Accounting</h1>
+    <div class="covers">Full curriculum mastery: 15 questions each from Lecture 1 (Management Concepts), Lecture 2 (Marketing), Lecture 3 (Economics), Lecture 4 (Human Resource Management), and Lecture 5 (Finance &amp; Accounting).</div>
+  </header>
+  <nav class="setnav" aria-label="Jump to Lecture topic">
+    <span style="font-size:.78rem;font-weight:700;color:var(--navy);margin-right:2px">JUMP TO:</span>
+    <a href="javascript:void(0)" onclick="window.quizNav(0)">L01 Management (Q1–15)</a>
+    <a href="javascript:void(0)" onclick="window.quizNav(15)">L02 Marketing (Q16–30)</a>
+    <a href="javascript:void(0)" onclick="window.quizNav(30)">L03 Economics (Q31–45)</a>
+    <a href="javascript:void(0)" onclick="window.quizNav(45)">L04 HRM (Q46–60)</a>
+    <a href="javascript:void(0)" onclick="window.quizNav(60)">L05 Finance &amp; Accounting (Q61–75)</a>
+  </nav>
+
+  <div class="rules">
+    <strong>Exam Instructions &amp; Scoring System</strong>
+    <ul>
+      <li><b>75 questions</b> in total (15 questions per lecture), each with 5 options. <b>Single answer</b> questions have exactly one correct option. <b>Multiple answers</b> questions have two or more correct options, requiring you to identify all correct statements.</li>
+      <li><b>Marking:</b> 1 full mark per question awarded only when your selection matches the answer key exactly. A partial-credit score (penalizing wrong selections) is calculated for reference.</li>
+      <li><b>Auto-saving:</b> Your selections and flagged questions save continuously to your browser. Upon submission, you can view your total score, topic-by-topic mastery charts, filter your mistakes, read in-depth explanations, and download this self-contained page with your completed attempt.</li>
+    </ul>
+  </div>
+
+  <div class="layout">
+    <main>
+      <div id="results"></div>
+      <div class="viewbar">
+        <div class="seg" role="group" aria-label="View">
+          <button type="button" data-view="one">One at a time</button>
+          <button type="button" data-view="all">All questions</button>
+        </div>
+        <div class="seg" id="filterSeg" role="group" aria-label="Review filter" hidden>
+          <button type="button" data-filter="all">Show all</button>
+          <button type="button" data-filter="wrong">Mistakes only</button>
+        </div>
+        <span class="hint" id="kbdHint">Keys: ← → move · A–E select</span>
+      </div>
+      <div id="questions"></div>
+      <div class="pager">
+        <button class="btn ghost" id="prevBtn" type="button">← Previous</button>
+        <span class="where" id="whereTxt"></span>
+        <button class="btn" id="nextBtn" type="button">Next →</button>
+      </div>
+    </main>
+
+    <aside>
+      <div class="panel">
+        <h3>Progress <span class="timer" id="timer" title="Time elapsed">00:00</span></h3>
+        <div class="progress"><i id="progBar"></i></div>
+        <div class="tiles">
+          <div class="tile"><b id="cntAns">0</b><span>Answered</span></div>
+          <div class="tile"><b id="cntLeft">75</b><span>Remaining</span></div>
+          <div class="tile flag"><b id="cntFlag">0</b><span>Flagged</span></div>
+        </div>
+        <div class="split" id="splitTxt"></div>
+      </div>
+      <div class="panel">
+        <h3>Question Navigator (75 Qs)</h3>
+        <div class="nav" id="nav"></div>
+        <div class="legend" id="legend"></div>
+        <div class="submit-wrap" id="submitWrap">
+          <button class="btn orange" id="btnSubmit" type="button">Submit &amp; check marks</button>
+        </div>
+      </div>
+    </aside>
+  </div>
+
+  <footer>Practice MCQ exam suite built from IT3120 Modern Enterprise Management (MEM) Lectures 01–05, Tutorial Worksheets, and In-Class Case Studies.</footer>
+</div>
+
+<div class="modal" id="modal" hidden role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="box"><div id="modal-body"></div></div>
+</div>
+<div id="toast" role="status" aria-live="polite"></div>
+<div id="mbar"><span id="mbarTxt"></span><div class="bar"><i id="mbarFill"></i></div><button type="button" data-act="jump">Questions ▲</button></div>
+
+<script type="application/json" id="quizData">{"setId": "IT3120_75Q_L01_L05", "questions": [
+  {
+    "topic": "L01 · Concept of Organization",
+    "src": "Lecture 01 · Sections 1.1–1.3",
+    "text": "Louis Allen defines an organization as a process, whereas modern management also defines it as a structured entity. According to the lecture notes, which statement correctly differentiates these two views and identifies the six fundamental building blocks of an organization?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Louis Allen defines an organization as an entity with permanent physical buildings; the six building blocks are Capital, Labor, Land, Machinery, Technology, and Profit.",
+      "Louis Allen views an organization as a process of identifying and grouping work, delegating authority and responsibility, and establishing relationships; whereas an organization as a structured entity consists of People, Goals, Structure, Resources, Rules & Process, and Leadership.",
+      "Louis Allen focuses solely on legal compliance; the entity definition requires that all organizations must operate permanently with a strict tall hierarchy.",
+      "Louis Allen defines an organization as an informal social gathering; the six building blocks apply exclusively to private sector profit-making corporations.",
+      "Both definitions state that any random collection of people sharing a common location (such as passengers at a bus queue) forms a formal organization."
+    ],
+    "ans": [1],
+    "exp": "Louis Allen's definition focuses on the dynamic process of organizing ('identifying and grouping work... defining and delegating responsibility and authority... establishing relationships'). In contrast, the entity definition describes a structured group of people collaborating toward shared goals. The six universal building blocks of any organization (illustrated in the lecture using SLIIT) are: People, Goals, Structure, Resources, Rules & Process, and Leadership. A bus queue lacks structure, assigned roles, and shared rules, and is therefore not an organization."
+  },
+  {
+    "topic": "L01 · Organization Origin & Characteristics",
+    "src": "Lecture 01 · Sections 1.1 & 1.5–1.7",
+    "text": "The lecture traces the word 'organization' from Greek 'organon' (tool) to modern enterprise theory. Which statements regarding organizational characteristics and exceptions are correct? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "The historical origin of 'organon' teaches that an organization is a social tool designed to achieve goals that an individual cannot accomplish alone.",
+      "An organization must have a physical office building to be formally classified as an organization.",
+      "Remote-first software companies and open-source communities (e.g., Linux kernel) have no central office, yet remain true organizations because they possess people, shared goals, rules, and maintainers.",
+      "Temporary organizations exist, such as agile project task forces or festival committees, which dissolve once their specific objective is achieved.",
+      "Informal organizations (such as friendship groups or developer chat channels) emerge naturally within formal organizations and can strongly influence behavior."
+    ],
+    "ans": [0, 2, 3, 4],
+    "exp": "Options A, C, D, and E are correct. Option B is false because physical buildings are not a mandatory prerequisite for an organization; virtual enterprises and open-source communities demonstrate that shared goals, roles, rules, and collaboration define an organization, not concrete walls."
+  },
+  {
+    "topic": "L01 · Management Definitions & Resources",
+    "src": "Lecture 01 · Sections 2.1–2.4",
+    "text": "Mary Parker Follett defined management as 'the art of getting things done through people,' while Henri Fayol defined it as a structured process. What resources do modern managers coordinate to achieve organizational goals? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Human resources (e.g., software engineers, UX designers, testers).",
+      "Financial resources (e.g., venture capital, budgets, cash flow).",
+      "Physical resources (e.g., high-performance laptops, cloud data servers, office facilities).",
+      "Information resources (e.g., customer analytics, proprietary code repositories, sprint reports).",
+      "Time (e.g., milestone schedules, release deadlines, delivery sprints)."
+    ],
+    "ans": [0, 1, 2, 3, 4],
+    "exp": "All five options are correct. Lecture 01 explicitly highlights that managers coordinate Human, Financial, Physical, Information, and Time resources to accomplish strategic objectives."
+  },
+  {
+    "topic": "L01 · Efficiency vs Effectiveness",
+    "src": "Lecture 01 · Section 2.5",
+    "text": "In modern enterprise management, efficiency and effectiveness are distinct yet interrelated measures of organizational performance. Which statements correctly distinguish them? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Efficiency is 'doing things right'—focusing on the means and minimizing resource waste (time, effort, and cost).",
+      "Effectiveness is 'doing the right things'—focusing on the ends, achieving stated organizational goals and satisfying customer needs.",
+      "A software team that delivers 50 story points per sprint with minimal expenditure but builds a product that zero customers use is efficient but ineffective.",
+      "In safety-critical domains (such as banking systems or medical devices), organizations intentionally invest in redundant backups, accepting lower efficiency to ensure maximum effectiveness.",
+      "Higher efficiency automatically guarantees high organizational effectiveness under all operating conditions."
+    ],
+    "ans": [0, 1, 2, 3],
+    "exp": "Options A, B, C, and D are all accurate. Option E is false because high efficiency in executing the wrong task (e.g., rapidly writing code for a feature that customers do not want or need) produces zero effectiveness. Efficiency and effectiveness must both be managed; effectiveness determines if the right goal is pursued, while efficiency determines how economically it is achieved."
+  },
+  {
+    "topic": "L01 · Four Functions of Management",
+    "src": "Lecture 01 · Sections 3.1–3.4",
+    "text": "Henri Fayol established management as a continuous process, modernized into the four primary functions (Planning, Organizing, Leading, Controlling). Which of the following statements accurately describe these functions and their relationships? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Planning bridges the gap between where the organization is today and where it wants to be in the future through strategic, tactical, and operational plans.",
+      "Organizing involves establishing organizational structure, grouping tasks, assigning authority and responsibility, and allocating resources to implement plans.",
+      "Controlling is strictly a post-mortem activity performed only at year-end to assign blame to underperforming staff members.",
+      "The controlling function relies on a feedback loop: setting performance standards, measuring actual results, comparing, and initiating corrective actions or plan revisions.",
+      "Leading focuses on guiding, motivating, and influencing employees using communication, shared values, and appropriate bases of power."
+    ],
+    "ans": [0, 1, 3, 4],
+    "exp": "Options A, B, D, and E are correct. Option C is false because controlling is not merely a punitive end-of-year inspection; it is an ongoing, continuous process (feedforward, concurrent, and feedback) designed to monitor performance against standards and keep managers informed so corrective adjustments or replanning can occur proactively."
+  },
+  {
+    "topic": "L01 · Levels of Planning",
+    "src": "Lecture 01 · Section 3.1",
+    "text": "An IT company sets three types of plans: (1) Expand cloud SaaS services into Southeast Asia over 5 years; (2) Open a regional sales office in Singapore by November; (3) Assign Nuwan to resolve Jira Bug #402 by 2:00 PM today. How are these three plans classified according to managerial planning hierarchy?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "(1) Tactical, (2) Operational, (3) Strategic",
+      "(1) Strategic, (2) Tactical, (3) Operational",
+      "(1) Operational, (2) Strategic, (3) Tactical",
+      "(1) Contingency, (2) Strategic, (3) Directional",
+      "(1) Strategic, (2) Operational, (3) Tactical"
+    ],
+    "ans": [1],
+    "exp": "(1) Long-term (3-10 years), organization-wide direction is a Strategic plan. (2) Medium-term (1-2 years), departmental implementation with specific who/what/when targets is a Tactical plan. (3) Short-term (daily/weekly) individual or team task scheduling is an Operational plan."
+  },
+  {
+    "topic": "L01 · The Controlling Feedback Loop",
+    "src": "Lecture 01 · Section 3.4",
+    "text": "A VP of Engineering establishes that the code defect rate must not exceed 2 bugs per 1,000 lines of code. At sprint end, automated code testing reveals 6 bugs per 1,000 lines. The VP organizes a root-cause retrospective and mandates peer code reviews before commits. Which sequence of the controlling feedback loop does this demonstrate?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Measure actual performance → Set standards → Compare → Revise plan",
+      "Set standards → Measure actual performance → Compare results against standards → Take corrective action",
+      "Take corrective action → Set standards → Measure performance → Terminate employees",
+      "Establish structure → Motivate employees → Measure output → Ignore deviations",
+      "Observe environment → Delegate authority → Eliminate feedback loop → Set standards"
+    ],
+    "ans": [1],
+    "exp": "The controlling process follows an explicit 4-stage feedback loop: 1. Set performance standards (2 bugs/KLoC); 2. Measure actual performance (6 bugs/KLoC); 3. Compare actual against standard (variance of +4 bugs); 4. Take corrective action (mandating peer reviews and retrospectives)."
+  },
+  {
+    "topic": "L01 · Managerial Levels & Skills",
+    "src": "Lecture 01 · Sections 4.1–4.3",
+    "text": "Robert Katz identified three essential managerial skill categories: Conceptual, Human (Interpersonal), and Technical. At which managerial tier is Conceptual skill most critical, and which role classification matches Henry Mintzberg's managerial framework?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Conceptual skills are most critical for Top-level managers (e.g., CEO, CTO) who focus on long-term strategy and environmental scanning; Mintzberg classifies roles into Interpersonal, Informational, and Decisional.",
+      "Conceptual skills are most critical for First-line managers who directly supervise technicians on the shop floor; Mintzberg classifies roles into Functional, Divisional, and Matrix.",
+      "Technical skills are equally critical across all management levels, while Human skills are only required by Middle managers.",
+      "Conceptual skills are exclusively needed by external consultants, whereas Top managers only require Technical coding skills.",
+      "Middle managers require only Decisional roles, having no need for Informational or Interpersonal interactions."
+    ],
+    "ans": [0],
+    "exp": "Robert Katz showed that Conceptual skills (seeing the enterprise as a whole, strategic vision) are paramount for Top managers. Technical skills are most vital for First-line managers and team leaders, while Human/Interpersonal skills are essential across all levels. Henry Mintzberg categorized managerial roles into Interpersonal (Figurehead, Leader, Liaison), Informational (Monitor, Disseminator, Spokesperson), and Decisional (Entrepreneur, Disturbance Handler, Resource Allocator, Negotiator)."
+  },
+  {
+    "topic": "L01 · Mintzberg's Managerial Roles",
+    "src": "Lecture 01 · Section 4.3",
+    "text": "Henry Mintzberg grouped managerial activities into ten specific roles across three broad categories. Which pairings of category and specific role are correct? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Interpersonal Category: Figurehead, Leader, and Liaison.",
+      "Informational Category: Monitor, Disseminator, and Spokesperson.",
+      "Decisional Category: Entrepreneur, Disturbance Handler, Resource Allocator, and Negotiator.",
+      "Interpersonal Category: Resource Allocator and Disseminator.",
+      "Decisional Category: Monitor and Liaison."
+    ],
+    "ans": [0, 1, 2],
+    "exp": "Options A, B, and C are correct according to Mintzberg's classic taxonomy. Resource Allocator is a Decisional role, Disseminator and Monitor are Informational roles, and Liaison is an Interpersonal role."
+  },
+  {
+    "topic": "L01 · Organizational Environment Layers",
+    "src": "Lecture 01 · Sections 5.1–5.3",
+    "text": "The lecture illustrates an organization as an open system interacting with three environmental layers. Which of the following correctly maps environmental forces to their appropriate layer? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Internal Environment: Corporate culture, employee skillsets, internal cash reserves, organizational structure.",
+      "Micro Environment (Task Environment): Cloud infrastructure vendors, direct enterprise competitors, software consumers, marketing intermediaries.",
+      "Macro Environment (General Environment): Economic inflation rates, national data privacy legislation (GDPR), rapid emergence of Generative AI.",
+      "Macro Environment: Internal employee grievances and daily project stand-up meetings.",
+      "Micro Environment: Worldwide demographic shifts and national geopolitical conflicts."
+    ],
+    "ans": [0, 1, 2],
+    "exp": "Options A, B, and C are correct. Option D belongs to the Internal environment, while Option E belongs to the Macro environment (PESTEL)."
+  },
+  {
+    "topic": "L01 · Organizational Behavior (OB) Levels",
+    "src": "Lecture 01 · Sections 6.1–6.3",
+    "text": "Organizational Behavior (OB) investigates human behavior across three interrelated tiers. A tech lead observes that an engineer performs exceptionally when coding independently, but withdraws and becomes uncommunicative during cross-functional pair programming. Which OB level of analysis is primary here?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Macro-environmental level",
+      "Organizational culture level",
+      "Group / Team level (examining how individual dynamics change within collective settings)",
+      "National economic level",
+      "Corporate governance level"
+    ],
+    "ans": [2],
+    "exp": "The three levels of OB are Individual, Group/Team, and Organizational. When a person's behavior alters specifically because they are placed in a collective or collaborative setting (such as pair programming or group meetings), the Group/Team level of analysis is directly highlighted."
+  },
+  {
+    "topic": "L01 · Classical vs Behavioral Management Approaches",
+    "src": "Lecture 01 · Sections 7.1–7.3",
+    "text": "Management thought evolved from Classical to Behavioral and Modern perspectives. Which statements correctly contrast these approaches? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "The Classical approach (Taylor, Fayol, Weber) emphasizes efficiency, standard operating procedures, clear hierarchies, and division of labor.",
+      "The Behavioral approach (Elton Mayo, Hawthorne studies) emphasizes human needs, social relationships, informal group dynamics, and employee morale.",
+      "The Quantitative approach utilizes mathematical modeling, statistics, and linear programming to support operational decision-making.",
+      "The Contingency approach asserts that there is one universal, perfect management style that works identically in every company.",
+      "Modern management recognizes that classical standard procedures remain valuable in routine, safety-critical tasks (such as payment processing or cybersecurity protocols)."
+    ],
+    "ans": [0, 1, 2, 4],
+    "exp": "Options A, B, C, and E are correct. Option D is false because the fundamental tenet of the Contingency approach is 'it depends'—there is NO single best way to manage; the most effective approach depends on situational variables (technology, environment, team expertise)."
+  },
+  {
+    "topic": "L01 · Organizational Structures",
+    "src": "Lecture 01 · Sections 8.1–8.3",
+    "text": "Organizational structures determine how tasks, departments, and reporting lines are configured. Which statements regarding organizational structures from Lecture 01 are correct? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "A Functional structure groups employees by specialized expertise (e.g., Software Engineering, QA, Marketing), promoting deep technical competence but creating departmental silos.",
+      "A Divisional structure organizes units around distinct products, services, or geographical regions, increasing market responsiveness but causing duplication of functional resources.",
+      "A Matrix structure combines functional and divisional dimensions, meaning employees often report to two managers (a functional head and a project manager), violating the classical unity of command.",
+      "Flat organizations possess many vertical management layers with narrow spans of control, resulting in slow communication and high bureaucratic overhead.",
+      "Decentralization pushes decision-making authority closer to frontline employees and operating units, whereas centralization concentrates authority at top management."
+    ],
+    "ans": [0, 1, 2, 4],
+    "exp": "Options A, B, C, and E are correct. Option D is incorrect because it describes a Tall organization; Flat organizations have few hierarchical layers, wide spans of control, direct communication, and faster decision-making."
+  },
+  {
+    "topic": "L01 · Bases of Power & Motivation",
+    "src": "Lecture 01 · Sections 9.1–9.3 & 10.1",
+    "text": "A senior lead software architect with no formal disciplinary authority persuades developers to adopt clean architecture principles because team members deeply admire her technical mastery and respect her personal integrity. Under French and Raven's framework, which sources of power is she primarily utilizing?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Legitimate and Coercive power",
+      "Reward and Legitimate power",
+      "Expert and Referent power",
+      "Coercive and Reward power",
+      "Informational and Centralized power"
+    ],
+    "ans": [2],
+    "exp": "French & Raven (1959) identified 5 bases of power. Expert power stems from specialized technical knowledge, skill, and expertise. Referent power stems from personal charisma, respect, admiration, and desire to identify with the individual. Because the architect has no formal hierarchical command (Legitimate) and does not hand out salaries (Reward) or penalties (Coercive), she exercises Expert and Referent power."
+  },
+  {
+    "topic": "L01 · McGregor's Theory X and Theory Y",
+    "src": "Lecture 01 · Section 10.2",
+    "text": "Douglas McGregor proposed Theory X and Theory Y to describe managerial assumptions about human nature. An engineering manager believes that software engineers naturally enjoy problem-solving, take pride in crafting quality software, seek responsibility, and thrive when given autonomy. This manager's mindset is based on:",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Theory X",
+      "Theory Y",
+      "Scientific Management",
+      "Bureaucratic Control",
+      "Coercive Authority"
+    ],
+    "ans": [1],
+    "exp": "Theory Y assumes employees view work as natural, are self-motivated, seek responsibility, and exercise self-direction when committed to objectives. Theory X assumes workers are inherently lazy, dislike work, avoid responsibility, and require strict supervision, coercion, or financial carrots."
+  },
+  {
+    "topic": "L02 · Why Marketing Matters for Computing",
+    "src": "Lecture 02 · Sections 1.1–1.3",
+    "text": "A student software development team builds an expense-tracking mobile app with clean code and no crashes. After launch, the app receives only 40 downloads. According to Lecture 02, what core lesson explains this outcome?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "The app must have had compilation errors on user devices.",
+      "Technology does not sell itself; most software products fail due to poor product-market fit and neglecting market research and promotion.",
+      "Student developers are legally prohibited from launching commercial software.",
+      "The team should immediately add 20 more technical features without consulting users.",
+      "Marketing is irrelevant in the software industry because digital distribution is free."
+    ],
+    "ans": [1],
+    "exp": "Lecture 02 emphasizes: 'Technology does not sell itself.' Most software products fail not because of coding flaws, but due to poor market fit—building something that does not solve a validated customer problem, or failing to understand, reach, and convince the target audience."
+  },
+  {
+    "topic": "L02 · Marketing vs Selling",
+    "src": "Lecture 02 · Sections 2.1–2.4",
+    "text": "How does modern marketing, as defined by the American Marketing Association (AMA), fundamentally differ from the traditional 'Selling Concept'?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Selling focuses on the customer's long-term well-being (outside-in), while marketing focuses on aggressive pushing of factory inventory (inside-out).",
+      "Marketing is an organizational function and set of processes for creating, communicating, delivering, and exchanging offerings of value for customers; it is an outside-in approach focused on customer needs, whereas selling is an inside-out approach focused on converting existing products into cash.",
+      "Selling and marketing are identical terms that describe promotional advertising and discount sales campaigns.",
+      "Marketing begins only after software development is 100% complete, while selling begins during initial product architecture.",
+      "Marketing applies exclusively to physical consumer goods, while selling is used exclusively for software-as-a-service (SaaS)."
+    ],
+    "ans": [1],
+    "exp": "The AMA defines marketing as the activity and processes for creating, communicating, delivering, and exchanging offerings that have value for customers, clients, partners, and society. The Selling Concept starts inside the factory with existing products and uses hard selling and promotion to generate sales volume (inside-out). The Marketing Concept starts in the market with customer needs and earns profits through customer satisfaction and long-term relationships (outside-in)."
+  },
+  {
+    "topic": "L02 · Evolution of Marketing Philosophies",
+    "src": "Lecture 02 · Sections 3.1–3.4",
+    "text": "Marketing orientation has evolved through distinct historical philosophies. Which statements regarding this evolution are correct? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "The Production Concept assumes consumers favor products that are widely available and highly affordable, focusing management on mass production and low unit costs.",
+      "The Product Concept assumes consumers favor products offering the highest quality, performance, and innovative features, but risks 'marketing myopia' if companies focus on the product rather than the underlying customer need.",
+      "The Selling Concept assumes consumers will naturally buy sufficient quantities of products without any advertising or sales pressure.",
+      "The Marketing Concept posits that achieving organizational goals depends on knowing the needs and wants of target markets and delivering desired satisfactions more effectively than competitors.",
+      "Marketing 6.0 integrates advanced digital technology (such as AI, IoT, and spatial computing) with human-centric physical experiences ('phygital') and sustainability."
+    ],
+    "ans": [0, 1, 3, 4],
+    "exp": "Options A, B, D, and E are correct. Option C is false because the Selling Concept explicitly assumes that buyers, if left alone, will ordinarily NOT buy enough of the organization's products, necessitating aggressive selling and promotion efforts."
+  },
+  {
+    "topic": "L02 · Marketing Mix (4Ps & 7Ps)",
+    "src": "Lecture 02 · Sections 4.1–4.3",
+    "text": "The Marketing Mix represents the controllable tactical tools an enterprise blends to produce the desired response in target markets. Which statements regarding the 4Ps and 7Ps are correct? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "The traditional 4Ps framework comprises Product, Price, Place, and Promotion.",
+      "In software and IT services, 'Place' refers exclusively to physical retail brick-and-mortar storefronts.",
+      "For services and digital solutions, three additional Ps are added: People, Process, and Physical Evidence.",
+      "Price is the only element in the marketing mix that directly generates revenue, whereas all other elements represent costs.",
+      "Promotion encompasses advertising, personal selling, sales promotions, public relations, and direct/digital marketing."
+    ],
+    "ans": [0, 2, 3, 4],
+    "exp": "Options A, C, D, and E are accurate. Option B is incorrect because in IT and software, 'Place' refers to digital distribution channels such as cloud SaaS platforms, app marketplaces, APIs, and website downloads, not just physical retail stores."
+  },
+  {
+    "topic": "L02 · The Extended 7Ps for IT Services",
+    "src": "Lecture 02 · Section 4.3",
+    "text": "In IT consulting and enterprise software deployment, why are the extended 3Ps (People, Process, Physical Evidence) particularly critical? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "People: Client trust depends directly on the expertise, responsiveness, and communication of developers, consultants, and technical support staff.",
+      "Process: Reliable service delivery workflows (e.g., agile sprints, seamless customer onboarding, bug resolution SLAs) ensure customer satisfaction.",
+      "Physical Evidence: Because software is intangible, clients rely on tangible cues such as professional UI design, clean documentation, SSL certificates, and case studies to judge quality.",
+      "People, Process, and Physical Evidence completely replace the need for having a functional core Product.",
+      "Physical Evidence refers only to heavy machinery and physical warehouse conveyor belts."
+    ],
+    "ans": [0, 1, 2],
+    "exp": "Options A, B, and C are correct. In services and software, intangibility makes People (the service providers), Process (how the service is delivered), and Physical Evidence (UI, website, certificates, documentation) vital. Option D is absurd; Option E ignores intangible digital service cues."
+  },
+  {
+    "topic": "L02 · STP Framework",
+    "src": "Lecture 02 · Sections 5.1–5.4",
+    "text": "A B2B SaaS startup segments its market based on company size (SMEs vs enterprises), cloud budget, and devops maturity. It decides to target exclusively mid-market fintech firms requiring automated regulatory compliance, and positions its software as 'The zero-config compliance engine for agile fintechs.' Which strategic STP sequence does this illustrate?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Mass Marketing → Product Differentiation → Penetration Pricing",
+      "Market Segmentation (Firmographic & Behavioral) → Concentrated / Niche Targeting → Differentiation and Positioning",
+      "Behavioral Segmentation → Undifferentiated Targeting → Skimming Positioning",
+      "Psychographic Segmentation → Mass Customization → Cost Leadership",
+      "Geographic Segmentation → Differentiated Targeting → Brand Dilution"
+    ],
+    "ans": [1],
+    "exp": "The STP framework consists of: 1. Segmentation (dividing market by firmographics, usage, behavior), 2. Targeting (selecting specific segments—here a concentrated/niche target of mid-market fintechs), and 3. Positioning (crafting a distinct value proposition and identity relative to competitors)."
+  },
+  {
+    "topic": "L02 · Market Segmentation Bases",
+    "src": "Lecture 02 · Section 5.1",
+    "text": "An IT gaming enterprise analyzes user data and groups gamers into: (1) Casual weekend gamers vs hardcore daily streamers; (2) Mobile Android users vs high-end PC rig owners; (3) Users motivated by competition vs those motivated by social storytelling. Which segmentation bases are being used? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Behavioral segmentation (usage rate and gaming habits).",
+      "Technographic / Demographic segmentation (device type and hardware ownership).",
+      "Psychographic segmentation (motives, lifestyle, and values).",
+      "Pure geographic segmentation based exclusively on postal zip codes.",
+      "Unsegmented mass production."
+    ],
+    "ans": [0, 1, 2],
+    "exp": "(1) Casual vs hardcore streamer is Behavioral (usage rate/frequency). (2) Android vs high-end PC is Technographic/Demographic. (3) Competition vs storytelling motives is Psychographic (lifestyle, psychological drivers). Options D and E are incorrect."
+  },
+  {
+    "topic": "L02 · Targeting Strategies",
+    "src": "Lecture 02 · Section 5.2",
+    "text": "A software enterprise offers three distinct editions of its project management platform: 'Freelance Solo' (free, single user), 'Team Growth' ($15/mo with collaboration boards), and 'Enterprise Secure' ($80/mo with single sign-on, audit logs, and dedicated SLA). What targeting strategy is this firm executing?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Undifferentiated (Mass) Marketing",
+      "Differentiated (Segmented) Marketing",
+      "Concentrated (Niche) Marketing",
+      "Micromarketing / Individual Customization",
+      "Counter-segmentation"
+    ],
+    "ans": [1],
+    "exp": "Differentiated (segmented) marketing targets multiple distinct market segments and designs separate product offerings with tailored value propositions and pricing for each (freelancers vs growing teams vs large corporations)."
+  },
+  {
+    "topic": "L02 · Positioning & Perceptual Maps",
+    "src": "Lecture 02 · Section 5.3",
+    "text": "What is a Perceptual Map (Positioning Map) used for in marketing strategy?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "To map the internal database schema and SQL foreign key relationships of an application.",
+      "To visually plot customer perceptions of competing brands along key dimensions (e.g., Price vs Feature Sophistication) to identify market gaps.",
+      "To track the network latency between cloud regions and edge servers.",
+      "To replace the balance sheet and profit & loss statements.",
+      "To calculate the depreciation of physical computers over five years."
+    ],
+    "ans": [1],
+    "exp": "A perceptual map is a visual diagram displaying the perceptions of target customers regarding competing brands or products along two or more critical evaluative criteria (such as price vs performance or ease-of-use vs technical customization). It helps firms spot unoccupied market spaces and formulate positioning strategy."
+  },
+  {
+    "topic": "L02 · Customer Value Proposition (CVP)",
+    "src": "Lecture 02 · Section 6.1",
+    "text": "According to Lecture 02, the Customer Value Proposition (CVP) can be expressed by which fundamental economic relationship?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Customer Value = Total Revenue ÷ Total Headcount",
+      "Customer Value = Perceived Customer Benefits − Total Customer Costs",
+      "Customer Value = Advertising Expenses + Server Costs",
+      "Customer Value = Depreciation Expense × Tax Rate",
+      "Customer Value = Number of Lines of Code Written"
+    ],
+    "ans": [1],
+    "exp": "Customer Value = Total Perceived Benefits (functional, economic, emotional, social) minus Total Incurred Costs (monetary price, time, effort, cognitive risk). A strong CVP convinces customers that the benefits substantially outweigh the total costs."
+  },
+  {
+    "topic": "L02 · Market Research & AI",
+    "src": "Lecture 02 · Sections 7.1 & 7.2",
+    "text": "How do modern tech enterprises gather and analyze market intelligence? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Primary research: Conducting user interviews, beta-testing surveys, and customer usability labs.",
+      "Secondary research: Examining industry analyst reports (Gartner, IDC), competitor public filings, and census data.",
+      "AI & Natural Language Processing: Analyzing customer sentiment across App Store reviews, Reddit threads, and social media.",
+      "Product analytics: Tracking user clickstreams, drop-off funnels, and feature usage via telemetry tools.",
+      "Market research should be conducted only once every 25 years due to statutory restrictions."
+    ],
+    "ans": [0, 1, 2, 3],
+    "exp": "Options A, B, C, and D are valid contemporary research methods. Option E is false; in dynamic tech sectors, market sensing is a continuous operational discipline."
+  },
+  {
+    "topic": "L02 · Product Life Cycle (PLC)",
+    "src": "Lecture 02 · Sections 7.1–7.4",
+    "text": "An enterprise software product experiences slowing sales growth, peak sales volume, intense price competition from substitute products, and high profits that begin to erode due to increased defensive marketing spending. Which stage of the Product Life Cycle (PLC) is this product in, and what is the typical strategic priority?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Introduction stage; focus on building basic product awareness and trial among early adopters.",
+      "Growth stage; focus on rapid market share expansion and opening new distribution channels.",
+      "Maturity stage; focus on defending market share, customer retention, feature modification, and cost optimization.",
+      "Decline stage; focus on immediate divestment, liquidation, and terminating all customer support.",
+      "Development stage; focus on code prototyping and MVP usability testing."
+    ],
+    "ans": [2],
+    "exp": "The described dynamics (peak sales, slowing sales growth, intense competition, profit pressure, emphasis on customer retention and defending market share) characterize the Maturity stage of the PLC. In this stage, marketing strategies focus on product differentiation, retention, entering niche segments, or refreshing features."
+  },
+  {
+    "topic": "L02 · Digital Marketing Metrics & CX",
+    "src": "Lecture 02 · Sections 9.1–9.3 & 10.1",
+    "text": "A software enterprise monitors its customer acquisition funnel and post-launch economics. Which statements regarding digital marketing metrics and Customer Experience (CX) are correct? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Customer Acquisition Cost (CAC) is calculated as Total Sales & Marketing Spend divided by the number of New Customers Acquired.",
+      "Customer Lifetime Value (CLV) represents the total net profit or revenue attributable to the entire future relationship with a customer.",
+      "A healthy SaaS business model generally requires that CLV is substantially greater than CAC (typically CLV > 3 × CAC).",
+      "Churn rate measures the percentage of customers who renew their monthly subscriptions.",
+      "Customer Value Proposition (CVP) defines the bundle of benefits delivered to customers minus the total costs incurred to obtain those benefits (Value = Benefits − Costs)."
+    ],
+    "ans": [0, 1, 2, 4],
+    "exp": "Options A, B, C, and E are correct. Option D is incorrect because Churn Rate measures the percentage of customers who cancel or discontinue their subscriptions over a given time period; renewal is retention rate (Retention Rate = 1 − Churn Rate)."
+  },
+  {
+    "topic": "L02 · SaaS Unit Economics Calculation",
+    "src": "Lecture 02 · Section 9.2",
+    "text": "In a given quarter, an IT SaaS startup spends LKR 3,000,000 on digital ad campaigns and marketing salaries, successfully onboarding 600 paying clients. Each client generates an average lifetime revenue of LKR 20,000 with a 75% gross margin. What is the Customer Acquisition Cost (CAC) and Customer Lifetime Value (CLV)?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "CAC = LKR 5,000; CLV = LKR 15,000 (CLV:CAC ratio = 3:1)",
+      "CAC = LKR 10,000; CLV = LKR 5,000 (CLV:CAC ratio = 0.5:1)",
+      "CAC = LKR 2,000; CLV = LKR 20,000 (CLV:CAC ratio = 10:1)",
+      "CAC = LKR 15,000; CLV = LKR 3,000 (CLV:CAC ratio = 0.2:1)",
+      "CAC = LKR 500; CLV = LKR 1,500 (CLV:CAC ratio = 3:1)"
+    ],
+    "ans": [0],
+    "exp": "1. CAC = Total Marketing Spend / New Customers = LKR 3,000,000 / 600 = LKR 5,000.\n2. CLV = Lifetime Revenue × Gross Margin = LKR 20,000 × 75% = LKR 15,000.\n3. Ratio = 15,000 / 5,000 = 3:1 (a classic benchmark for sustainable SaaS unit economics)."
+  },
+  {
+    "topic": "L02 · Brand Equity & CRM",
+    "src": "Lecture 02 · Sections 10.1 & 11.1",
+    "text": "Which statements regarding Brand Equity and Customer Relationship Management (CRM) are correct? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Brand equity is the commercial value that derives from consumer perception of the brand name, rather than from the product itself.",
+      "High brand equity allows software companies to charge premium subscription pricing and experience lower customer churn.",
+      "Customer Relationship Management (CRM) software stores customer interaction histories, manages sales pipelines, and coordinates support tickets.",
+      "Acquiring a new customer is typically 5 to 7 times more expensive than retaining an existing customer, making CRM and customer success teams economically vital.",
+      "A brand name has zero economic value and is completely ignored by institutional tech buyers."
+    ],
+    "ans": [0, 1, 2, 3],
+    "exp": "Options A, B, C, and D are accurate reflections of lecture principles. Strong brand equity drives premium pricing and customer loyalty. Retaining existing customers through CRM is far more cost-effective than continuous cold acquisition. Option E is false."
+  },
+  {
+    "topic": "L03 · Scarcity & The Economic Problem",
+    "src": "Lecture 03 · Sections 1.1–1.3",
+    "text": "Economics is defined as the study of how society manages its scarce resources. Which statements regarding scarcity, needs, and wants are correct? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Needs are essentials required for survival (food, shelter, basic healthcare), whereas wants are desires that improve quality of life.",
+      "Scarcity arises because human wants are virtually unlimited, while economic resources (land, labor, capital, technology, time) are strictly finite.",
+      "Scarcity is identical to poverty; wealthy nations and profitable tech conglomerates do not face any scarcity.",
+      "Every economic system must answer three fundamental questions: What to produce, How to produce, and For Whom to produce.",
+      "Even multi-billion dollar tech companies face scarcity—particularly scarcity of specialized developer talent and time to market."
+    ],
+    "ans": [0, 1, 3, 4],
+    "exp": "Options A, B, D, and E are correct. Option C is false because scarcity is a universal condition resulting from infinite desires confronting finite time and resources; even the wealthiest individuals and tech firms face severe scarcity of time and skilled labor."
+  },
+  {
+    "topic": "L03 · Scarcity & Opportunity Cost",
+    "src": "Lecture 03 · Sections 1.1–1.4",
+    "text": "An IT enterprise has a fixed pool of senior cloud engineers. It evaluates three mutually exclusive project contracts for the upcoming quarter:\n• Project Alpha: Expected economic profit = LKR 12 million\n• Project Beta: Expected economic profit = LKR 9 million\n• Project Gamma: Expected economic profit = LKR 5 million\nIf management decides to undertake Project Alpha, what is the opportunity cost of this decision?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "LKR 12 million",
+      "LKR 9 million",
+      "LKR 14 million (LKR 9M + LKR 5M)",
+      "LKR 3 million (LKR 12M − LKR 9M)",
+      "LKR 26 million (LKR 12M + LKR 9M + LKR 5M)"
+    ],
+    "ans": [1],
+    "exp": "Opportunity cost is strictly the value of the next-best alternative forgone when a choice is made. Between the forgone options Beta (9M) and Gamma (5M), the next-best alternative is Project Beta with an expected profit of LKR 9 million. It is not the sum of all alternatives, nor the profit of the chosen option."
+  },
+  {
+    "topic": "L03 · Circular Flow of Economic Activity",
+    "src": "Lecture 03 · Section 3.1",
+    "text": "In the neoclassical circular flow of income model with households and firms, which transactions occur in the Factor Market (Resource Market)?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Consumers buy cloud gaming subscriptions from software studios.",
+      "Households sell their labor (e.g., engineering skills) to IT enterprises in exchange for wages and salaries.",
+      "A retail shopper purchases a smartphone at an electronics mall.",
+      "Firms sell software licenses to government ministries.",
+      "Firms exchange finished goods with other firms."
+    ],
+    "ans": [1],
+    "exp": "In the circular flow model, the Factor Market (Resource Market) is where households provide factors of production (labor, land, capital, entrepreneurship) to firms in return for factor payments (wages, rent, interest, profit). The Product Market is where households buy finished goods and services from firms."
+  },
+  {
+    "topic": "L03 · The Law of Demand",
+    "src": "Lecture 03 · Section 4.1",
+    "text": "The Law of Demand states that, ceteris paribus (all other factors held constant):",
+    "table": null,
+    "code": null,
+    "opts": [
+      "As the price of a good rises, the quantity demanded increases proportionally.",
+      "As the price of a good rises, the quantity demanded decreases, demonstrating an inverse relationship.",
+      "Price and quantity demanded are completely independent of each other.",
+      "Sellers always supply more goods at lower prices.",
+      "Consumer demand is determined solely by government price ceilings."
+    ],
+    "ans": [1],
+    "exp": "The Law of Demand establishes an inverse relationship between price and quantity demanded: as price increases, quantity demanded contracts; as price decreases, quantity demanded expands, creating a downward-sloping demand curve."
+  },
+  {
+    "topic": "L03 · Law of Demand & Supply",
+    "src": "Lecture 03 · Sections 4.1–4.3",
+    "text": "Which statements correctly distinguish between a movement along a demand/supply curve and a shift of the curve? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "A change in the price of the good itself causes a movement along the demand curve (change in quantity demanded).",
+      "An increase in consumer income, consumer preference, or the price of a substitute good shifts the entire demand curve to the right.",
+      "A change in the price of the good itself causes the entire supply curve to shift outward.",
+      "Technological advancements that reduce cloud server hosting costs shift the supply curve of cloud computing services to the right.",
+      "The Law of Demand states that, ceteris paribus, as price rises, the quantity demanded decreases (an inverse relationship)."
+    ],
+    "ans": [0, 1, 3, 4],
+    "exp": "Options A, B, D, and E are correct economic principles. Option C is false because a change in the product's own price causes a movement along the existing supply curve (a change in quantity supplied), not a shift of the supply curve. Shifts in supply curves are caused by non-price determinants such as input costs, technology, taxes/subsidies, and number of suppliers."
+  },
+  {
+    "topic": "L03 · Cross-Price Shifts: Substitutes and Complements",
+    "src": "Lecture 03 · Section 4.2",
+    "text": "Suppose Cloud Storage Provider A doubles its monthly subscription price. Simultaneously, the price of high-speed fiber broadband plunges by 50%. How will these events impact the market demand for Cloud Storage Provider B (a direct substitute for Provider A) and cloud-synced applications (a complement to broadband)? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "The demand curve for Provider B shifts to the right (substitute effect).",
+      "The demand curve for cloud-synced applications shifts to the right (cheaper complementary internet boosts cloud app usage).",
+      "The demand curve for Provider B shifts to the left.",
+      "The quantity demanded of Provider A decreases along its own demand curve.",
+      "Both substitute and complement demand curves immediately collapse to zero."
+    ],
+    "ans": [0, 1, 3],
+    "exp": "Options A, B, and D are correct. When Provider A raises price, consumers switch to substitute Provider B (shifting B's demand right) while reducing quantity demanded of A (movement along A's curve). When complementary broadband becomes cheaper, demand for cloud-synced apps shifts to the right."
+  },
+  {
+    "topic": "L03 · Law of Supply & Shifts",
+    "src": "Lecture 03 · Section 4.3",
+    "text": "Which factors will cause the entire market supply curve for software engineering services to shift to the right? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "A substantial increase in the number of qualified computer science and IT graduates entering the workforce.",
+      "Adoption of AI-assisted code completion tools that double developer productivity and reduce per-feature delivery costs.",
+      "A massive new tax imposed on every software developer hired.",
+      "A severe increase in the price of development hardware and electricity.",
+      "Government subsidies and tax credits provided for tech industry payroll."
+    ],
+    "ans": [0, 1, 4],
+    "exp": "Options A, B, and E increase supply (shifting the curve right) through more workers, cost-saving productivity technology, and favorable subsidies. Options C and D increase costs, shifting supply to the left."
+  },
+  {
+    "topic": "L03 · Market Equilibrium & Price Controls",
+    "src": "Lecture 03 · Sections 4.4–4.6",
+    "text": "In a competitive market for optical fiber broadband subscriptions, the equilibrium price is LKR 4,000 per month with 50,000 subscribers. If the government imposes a statutory price ceiling of LKR 2,500 per month to make internet affordable, what is the inevitable economic outcome?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "A market surplus where quantity supplied exceeds quantity demanded.",
+      "A market shortage (excess demand) because quantity demanded at LKR 2,500 exceeds the quantity ISPs are willing to supply.",
+      "An immediate increase in the equilibrium price to LKR 6,000.",
+      "Both demand and supply curves shift simultaneously to eliminate all scarcity.",
+      "Quantity supplied increases dramatically while quantity demanded plummets."
+    ],
+    "ans": [1],
+    "exp": "A price ceiling set below the market equilibrium price creates an artificial price cap where quantity demanded expands (lower price encourages more subscribers) while quantity supplied shrinks (lower price makes it unprofitable for ISPs to expand infrastructure). This persistent gap results in a market shortage (excess demand)."
+  },
+  {
+    "topic": "L03 · Price Elasticity of Demand (PED)",
+    "src": "Lecture 03 · Section 5.1",
+    "text": "A mobile app development company charges LKR 500 for its premium monthly subscription and sells 10,000 subscriptions (Total Revenue = LKR 5,000,000). It reduces the price by 10% to LKR 450, causing the quantity demanded to increase by 25% to 12,500 subscriptions (Total Revenue = LKR 5,625,000). What is the Price Elasticity of Demand (PED) and what does this imply about Total Revenue?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "PED = −0.40 (inelastic); cutting price reduced total revenue.",
+      "PED = −2.50 (elastic); because demand is price-elastic (|PED| > 1), lowering price increased total revenue.",
+      "PED = −1.00 (unitary elastic); total revenue remained completely unchanged.",
+      "PED = +2.50 (Giffen good); the law of demand was violated.",
+      "PED = −0.25 (perfectly inelastic); the firm should raise prices infinitely."
+    ],
+    "ans": [1],
+    "exp": "PED = (% change in Quantity Demanded) / (% change in Price) = (+25%) / (−10%) = −2.50. Since |PED| = 2.50 > 1, demand is price-elastic. Under elastic demand, the percentage gain in quantity demanded outweighs the percentage reduction in price, causing Total Revenue to expand from LKR 5,000,000 to LKR 5,625,000."
+  },
+  {
+    "topic": "L03 · Total Revenue Test of Elasticity",
+    "src": "Lecture 03 · Section 5.2",
+    "text": "A SaaS enterprise discovers that demand for its enterprise cybersecurity suite is inelastic (|PED| = 0.45). If management decides to increase subscription prices by 15%, what will happen to Total Revenue?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Total revenue will decrease sharply.",
+      "Total revenue will increase, because the percentage drop in quantity demanded will be smaller than the percentage increase in price.",
+      "Total revenue will fall to exactly zero.",
+      "Total revenue will remain completely identical.",
+      "Quantity demanded will increase by 50%."
+    ],
+    "ans": [1],
+    "exp": "Under inelastic demand (|PED| < 1), consumers are relatively insensitive to price changes (often due to lack of substitutes or necessity). A price increase leads to a proportionally smaller reduction in quantity demanded, resulting in higher Total Revenue."
+  },
+  {
+    "topic": "L03 · Law of Diminishing Marginal Returns",
+    "src": "Lecture 03 · Section 6.1",
+    "text": "What does the Law of Diminishing Marginal Returns state in production economics?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Adding more of a variable input (e.g., developers) to a fixed input (e.g., a single codebase with fixed servers) will eventually yield progressively smaller additions to total output.",
+      "Total production always falls to zero when a new worker is hired.",
+      "Firms can expand production infinitely without increasing variable costs.",
+      "Profits always diminish over time due to tax laws.",
+      "Fixed costs decrease with every additional engineer hired."
+    ],
+    "ans": [0],
+    "exp": "The Law of Diminishing Marginal Returns dictates that as equal successive increments of a variable input (labor) are added to a fixed input (capital/infrastructure), the marginal product (additional output generated by each additional worker) will eventually decline."
+  },
+  {
+    "topic": "L03 · Cost of Production & Marginal Cost",
+    "src": "Lecture 03 · Section 6.1",
+    "text": "A software hosting firm incurs costs as shown in the table below. Which statements regarding this firm's cost structure are correct? (Select all that apply)",
+    "table": "<table><thead><tr><th>Users (Q)</th><th>Total Cost (TC)</th><th>Fixed Cost (FC)</th><th>Variable Cost (VC)</th></tr></thead><tbody><tr><td>0</td><td>LKR 100,000</td><td>LKR 100,000</td><td>LKR 0</td></tr><tr><td>1,000</td><td>LKR 160,000</td><td>LKR 100,000</td><td>LKR 60,000</td></tr><tr><td>2,000</td><td>LKR 200,000</td><td>LKR 100,000</td><td>LKR 100,000</td></tr><tr><td>3,000</td><td>LKR 270,000</td><td>LKR 100,000</td><td>LKR 170,000</td></tr></tbody></table>",
+    "code": null,
+    "opts": [
+      "Average Fixed Cost (AFC) continuously declines as output Q increases (AFC = 100 at Q=1,000; AFC = 50 at Q=2,000; AFC ≈ 33.33 at Q=3,000).",
+      "Average Total Cost (ATC) at Q = 2,000 users is LKR 100 per user.",
+      "The Marginal Cost (MC) of expanding from 1,000 to 2,000 users is LKR 40 per user (ΔTC / ΔQ = 40,000 / 1,000).",
+      "The Marginal Cost (MC) of expanding from 2,000 to 3,000 users is LKR 70 per user (ΔTC / ΔQ = 70,000 / 1,000).",
+      "Fixed costs increase proportionally with every additional user onboarded."
+    ],
+    "ans": [0, 1, 2, 3],
+    "exp": "Options A, B, C, and D are mathematically correct:\n• AFC = FC / Q: 100,000/1000 = 100; 100,000/2000 = 50; 100,000/3000 ≈ 33.33.\n• ATC(2,000) = TC / Q = 200,000 / 2,000 = LKR 100 per user.\n• MC(1000→2000) = (200,000 − 160,000) / 1,000 = LKR 40 per user.\n• MC(2000→3000) = (270,000 − 200,000) / 1,000 = LKR 70 per user.\nOption E is false because Fixed Costs remain constant at LKR 100,000 regardless of user count."
+  },
+  {
+    "topic": "L03 · Marginal Cost and ATC Relationship",
+    "src": "Lecture 03 · Section 6.2",
+    "text": "In microeconomics, what is the geometric relationship between the Marginal Cost (MC) curve and the Average Total Cost (ATC) curve?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "The MC curve always lies completely below the ATC curve.",
+      "The MC curve intersects the ATC curve exactly at the ATC curve's minimum point.",
+      "The MC curve intersects the ATC curve at its maximum point.",
+      "The two curves are straight parallel horizontal lines.",
+      "The ATC curve has no mathematical relation to the MC curve."
+    ],
+    "ans": [1],
+    "exp": "Whenever Marginal Cost is less than Average Total Cost ($MC < ATC$), it pulls the average down. Whenever Marginal Cost is greater than Average Total Cost ($MC > ATC$), it pulls the average up. Therefore, the MC curve intersects the U-shaped ATC curve precisely at its lowest (minimum) point."
+  },
+  {
+    "topic": "L03 · Consumer/Producer Surplus & IT Economics",
+    "src": "Lecture 03 · Sections 7.1 & 8.1",
+    "text": "Which statements regarding economic surplus and the cost characteristics of digital / SaaS products are correct? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Consumer Surplus is the difference between the maximum price a consumer is willing to pay and the actual market price paid.",
+      "Producer Surplus is the difference between the market price received by the seller and the seller's minimum acceptable price (marginal cost of production).",
+      "Software and SaaS products are characterized by very high upfront fixed development costs (R&D, architecture) and near-zero marginal costs for distributing an additional digital copy.",
+      "Because the marginal cost of a software download is near zero, average total cost (ATC) falls continuously across massive user volumes, creating powerful economies of scale.",
+      "When a market operates at competitive equilibrium with no externalities, the sum of Consumer Surplus and Producer Surplus (Total Economic Surplus) is minimized."
+    ],
+    "ans": [0, 1, 2, 3],
+    "exp": "Options A, B, C, and D are correct. Option E is false because competitive market equilibrium maximizes Total Economic Surplus (allocative efficiency), rather than minimizing it."
+  },
+  {
+    "topic": "L03 · Sunk Cost vs Opportunity Cost in Tech Decisions",
+    "src": "Lecture 03 · Sections 1.4 & 7.12",
+    "text": "A software enterprise has already invested LKR 8,000,000 in developing a custom proprietary database engine that is now proving slower and more bug-prone than open-source alternatives. Management must decide whether to spend another LKR 2,000,000 to attempt to patch it, or switch to an open-source solution that will cost LKR 1,500,000 to integrate and yield superior performance. How should rational economic decision-making treat the LKR 8,000,000 already spent?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "The LKR 8,000,000 is an opportunity cost that must be added to the cost of switching to open source.",
+      "The LKR 8,000,000 is a sunk cost (past expenditure that cannot be recovered) and must be completely ignored when choosing between future alternatives.",
+      "The LKR 8,000,000 must be capitalized as a variable cost that decreases marginal cost.",
+      "The company must continue investing in the proprietary engine until the LKR 8,000,000 is fully recovered.",
+      "The LKR 8,000,000 represents consumer surplus."
+    ],
+    "ans": [1],
+    "exp": "A sunk cost is an expense that has already occurred in the past and cannot be recovered regardless of future actions. Rational economic decision-making ignores sunk costs and compares only future incremental costs and benefits. Succumbing to the 'sunk cost fallacy' (throwing good money after bad simply because money was already spent) leads to irrational investment decisions."
+  },
+  {
+    "topic": "L04 · Strategic HRM & Core Elements",
+    "src": "Lecture 04 · Sections 1.1–1.4",
+    "text": "How does Strategic Human Resource Management (SHRM) differ from traditional administrative personnel management, and what are the five core elements of the HRM system highlighted in Lecture 04?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "SHRM focuses strictly on daily timesheet logging; the five elements are Accounting, Finance, Marketing, IT, and Procurement.",
+      "SHRM treats employees as key strategic assets and aligns human resource policies proactively with long-term business goals, whereas traditional HR is reactive and transactional; its five core elements are Employment, Development, Performance Management, Employee Well-being, and Reward System.",
+      "SHRM is applied exclusively in public sector unions, while private tech companies only utilize administrative personnel filing.",
+      "Traditional HR aligns people with long-term strategy, whereas SHRM deals only with payroll calculation and compliance penalties.",
+      "Strategic HRM eliminates line managers' involvement in people management, centralizing all feedback into an automated HR bot."
+    ],
+    "ans": [1],
+    "exp": "Strategic HRM is a strategic and coherent approach to managing people as key organizational assets, proactively connecting workforce planning, culture, and capabilities to long-term enterprise goals. The five core elements illustrated in the lecture diagram are: Employment (planning/recruiting/onboarding), Development (learning/career paths), Performance Management (objectives/reviews), Employee Well-being (work-life/safety/health), and Reward System (compensation/recognition)."
+  },
+  {
+    "topic": "L04 · Why HRM Matters in IT",
+    "src": "Lecture 04 · Section 1.5",
+    "text": "Why is Human Resource Management considered particularly critical for IT and software development enterprises compared to traditional manufacturing? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Tech companies rely primarily on 'knowledge workers' whose tacit problem-solving skills, creativity, and architecture abilities cannot be replaced by machines.",
+      "The global tech industry faces intense developer talent shortages, requiring competitive employer branding to attract skilled engineers.",
+      "Losing a senior software engineer carries high replacement costs (lost project momentum, recruitment fees, knowledge loss).",
+      "Software companies have zero operational expenses other than electricity.",
+      "Employee burnout, high turnover, and rapid skill obsolescence require continuous training and well-being programs."
+    ],
+    "ans": [0, 1, 2, 4],
+    "exp": "Options A, B, C, and E are correct. IT firms are human-capital intensive; their primary assets go home every evening. Option D is absurd."
+  },
+  {
+    "topic": "L04 · Job Analysis: Description vs Specification",
+    "src": "Lecture 04 · Section 2.1",
+    "text": "A job posting contains two sections:\nSection 1: 'Write scalable REST APIs, conduct pull request reviews, maintain Docker containers, and participate in daily Scrum standups.'\nSection 2: 'BSc in Computer Science, 3+ years experience with Golang, solid understanding of PostgreSQL indexing, and excellent communication skills.'\nHow are Section 1 and Section 2 formally classified in HRM?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Section 1 = Job Specification (KSAs); Section 2 = Job Description (TDRs)",
+      "Section 1 = Job Description (TDRs); Section 2 = Job Specification (KSAs)",
+      "Both sections are Job Specifications",
+      "Both sections are Job Descriptions",
+      "Section 1 = Performance Appraisal; Section 2 = Employment Contract"
+    ],
+    "ans": [1],
+    "exp": "A Job Description specifies Tasks, Duties, and Responsibilities (TDRs)—what the job entails (Section 1). A Job Specification outlines the Knowledge, Skills, Abilities, and Qualifications (KSAs)—what the applicant must possess to qualify for the role (Section 2)."
+  },
+  {
+    "topic": "L04 · Recruitment & Selection",
+    "src": "Lecture 04 · Sections 2.1–2.4",
+    "text": "Which statements regarding job analysis, recruitment, and selection in modern IT organizations are correct? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Job Analysis is the foundational process of collecting information about a job's duties, tasks, and operating conditions.",
+      "A Job Description specifies the tasks, duties, and responsibilities (TDRs) of the role (what the job entails).",
+      "A Job Specification outlines the knowledge, skills, abilities, and qualifications (KSAs) required of the person performing the job.",
+      "Employer Branding is a marketing-oriented HR practice that positions the enterprise as an attractive employer of choice to recruit top talent.",
+      "Unstructured interviews with no standardized criteria have consistently been proven to have higher predictive validity for coding performance than structured practical coding assessments and work sample tests."
+    ],
+    "ans": [0, 1, 2, 3],
+    "exp": "Options A, B, C, and D are correct. Option E is false: unstructured interviews have notoriously low predictive validity and are highly vulnerable to subjective biases; structured practical coding tests and work samples have much higher predictive validity for technical roles."
+  },
+  {
+    "topic": "L04 · Selection Methods Validity",
+    "src": "Lecture 04 · Section 2.3",
+    "text": "A tech firm screens software engineering applicants using: (1) Graphology (handwriting analysis); (2) Unstructured casual conversation; (3) Standardized technical work-sample coding tests. According to HR research, which method has the highest predictive validity for actual on-the-job programming performance?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Graphology (handwriting analysis)",
+      "Unstructured casual conversation",
+      "Standardized technical work-sample coding test",
+      "Astrology and horoscope screening",
+      "All three methods have identical predictive power"
+    ],
+    "ans": [2],
+    "exp": "Work-sample tests and structured performance demonstrations have the highest empirical predictive validity for technical roles. Graphology has zero validity, and unstructured interviews have very low validity due to interviewer bias."
+  },
+  {
+    "topic": "L04 · Performance Management: OKRs vs KPIs",
+    "src": "Lecture 04 · Section 3.1",
+    "text": "Which statements accurately describe modern performance management tools such as OKRs (Objectives and Key Results) and KPIs (Key Performance Indicators)? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "KPIs measure ongoing business health and operational baseline performance (e.g., Server Uptime ≥ 99.99%).",
+      "OKRs are ambitious, qualitative objectives coupled with quantifiable, time-bound key results used to drive strategic change (e.g., Launch mobile payments to 100K users by Q3).",
+      "Continuous feedback and regular 1-on-1 check-ins are replacing static once-a-year annual performance reviews.",
+      "OKRs must always be tied directly to immediate salary deductions whenever an employee achieves only 70% of an ambitious goal.",
+      "360-degree feedback gathers performance insights from peers, subordinates, supervisors, and sometimes clients."
+    ],
+    "ans": [0, 1, 2, 4],
+    "exp": "Options A, B, C, and E are correct. Option D is false because OKRs are designed to encourage ambitious stretch goals; punishing employees for achieving 70% of an aggressive target encourages sandbagging and destroys psychological safety."
+  },
+  {
+    "topic": "L04 · Performance Management & Appraisal Biases",
+    "src": "Lecture 04 · Sections 3.1–3.4",
+    "text": "During an annual performance appraisal, an engineering manager rates a developer as 'Outstanding' across all criteria (communication, teamwork, documentation, client care) simply because the developer wrote an elegant algorithm that solved a high-profile database crash last week, overlooking the fact that the developer missed sprint deadlines and skipped meetings throughout the rest of the year. Which cognitive appraisal bias does this illustrate?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Central Tendency bias",
+      "Halo Effect combined with Recency bias",
+      "Horns Effect",
+      "Strictness / Leniency bias",
+      "Contrast error"
+    ],
+    "ans": [1],
+    "exp": "The Halo Effect occurs when one prominent positive achievement or trait over-influences the evaluator to give top ratings across all other unrelated dimensions. Recency bias occurs when the appraiser over-weights recent events (the crash fix last week) rather than evaluating performance over the entire appraisal period."
+  },
+  {
+    "topic": "L04 · Central Tendency & Horns Effect",
+    "src": "Lecture 04 · Section 3.3",
+    "text": "An IT department manager rates all 20 of his engineers as 'Average / 3 out of 5' to avoid conflict, paperwork, and having to justify top or bottom scores. Which appraisal rating error is this manager committing?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Horns Effect",
+      "Central Tendency bias",
+      "Halo Effect",
+      "Recency bias",
+      "Stereotyping bias"
+    ],
+    "ans": [1],
+    "exp": "Central Tendency bias occurs when an appraiser avoids giving very high or very low ratings, clustering all employees around the middle of the scale regardless of true performance differences."
+  },
+  {
+    "topic": "L04 · Motivation & Reward Systems",
+    "src": "Lecture 04 · Sections 4.1–4.3",
+    "text": "Herzberg's Two-Factor Theory (Motivator-Hygiene Theory) and modern reward systems distinguish between factors that prevent dissatisfaction and those that drive positive motivation. Which statements are correct? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Hygiene factors (e.g., adequate base salary, company policies, working conditions, job security) prevent dissatisfaction but do not intrinsically motivate employees to excel.",
+      "Motivators (e.g., challenging work, recognition, responsibility, personal growth, achievement) arise from the job itself and stimulate higher performance and commitment.",
+      "Providing free snacks and upgrading air conditioning in an IT office will convert a demotivated developer into a passionate top performer according to Herzberg.",
+      "Intrinsic rewards originate internally from the performance of the task itself (e.g., sense of mastery, autonomy, pride in crafting clean code).",
+      "Extrinsic rewards are tangible outcomes provided by external parties (e.g., cash bonuses, promotions, paid conferences, certificates)."
+    ],
+    "ans": [0, 1, 3, 4],
+    "exp": "Options A, B, D, and E are correct. Option C is false because snacks and air conditioning are hygiene factors/physical working conditions: improving them removes dissatisfaction, but Herzberg showed that only motivators (responsibility, challenging work, recognition, achievement) generate true job satisfaction and high performance."
+  },
+  {
+    "topic": "L04 · Intrinsic vs Extrinsic Rewards",
+    "src": "Lecture 04 · Section 4.2",
+    "text": "Which of the following is an Intrinsic reward for a software engineer?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "An annual cash performance bonus of LKR 500,000.",
+      "A company-issued iPhone and gym membership.",
+      "A deep sense of personal achievement and mastery from architecting an elegant, fault-tolerant microservice system.",
+      "A formal job promotion to Vice President.",
+      "A paid weekend holiday voucher to a resort."
+    ],
+    "ans": [2],
+    "exp": "Intrinsic rewards are internal psychological payoffs derived directly from performing the work itself—such as feelings of competence, personal growth, autonomy, and pride in craftsmanship. Bonuses, devices, promotions, and trips are tangible Extrinsic rewards bestowed from outside."
+  },
+  {
+    "topic": "L04 · Leadership Styles & Team Power",
+    "src": "Lecture 04 · Sections 5.1–5.4",
+    "text": "Which statements regarding leadership styles and power dynamics in tech teams from Lecture 04 are correct? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Transformational leadership inspires and motivates followers through a compelling vision, intellectual stimulation, and individual mentoring.",
+      "Laissez-faire leadership provides minimal direction, granting experienced autonomous professionals maximum freedom to organize their own work.",
+      "Autocratic (directive) leadership is ineffective under all circumstances and should never be utilized in modern software enterprises.",
+      "Servant leadership emphasizes serving the needs of the team first, removing blockers, and empowering developers rather than exerting hierarchical command.",
+      "During acute production incidents or critical security breaches, a more directive leadership approach is often necessary to coordinate emergency responses quickly."
+    ],
+    "ans": [0, 1, 3, 4],
+    "exp": "Options A, B, D, and E are accurate. Option C is false because contingency theory and the lecture notes emphasize that directive/autocratic leadership is appropriate and necessary during urgent crises, security incidents, or when junior teams require immediate, unambiguous instruction."
+  },
+  {
+    "topic": "L04 · Tuckman's Team Development Stages",
+    "src": "Lecture 04 · Sections 7.1–7.3",
+    "text": "A newly formed cross-functional agile development team experiences interpersonal friction. Developers and QA engineers argue over code-review guidelines, sprint velocity commitments, and definition of done. Subgroups form, and members question the Scrum Master's role. According to Bruce Tuckman's model of team development, which stage is the team going through, and what is the subsequent stage?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Forming; followed by Norming",
+      "Storming; followed by Norming",
+      "Norming; followed by Performing",
+      "Performing; followed by Adjourning",
+      "Adjourning; followed by Re-forming"
+    ],
+    "ans": [1],
+    "exp": "Tuckman's stages are: Forming → Storming → Norming → Performing → Adjourning. In Storming, team members challenge boundaries, experience conflict regarding leadership, processes, and responsibilities, and struggle for positions. Once these conflicts are resolved and working agreements established, the team transitions into Norming."
+  },
+  {
+    "topic": "L04 · Tuckman's Performing & Adjourning",
+    "src": "Lecture 04 · Section 7.2",
+    "text": "An enterprise agile team operates with high trust, resolves technical disputes autonomously without manager intervention, and consistently meets ambitious sprint deliverables. The client contract concludes, and the project team is dissolved. Which final two stages of Tuckman's model did the team experience?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Forming and Storming",
+      "Storming and Norming",
+      "Norming and Performing",
+      "Performing and Adjourning",
+      "Adjourning and Forming"
+    ],
+    "ans": [3],
+    "exp": "Performing is characterized by peak autonomous functioning, high competence, and fluid problem-solving. Adjourning (mourning/termination) occurs when the project objective is finished and the team wraps up tasks and disbands."
+  },
+  {
+    "topic": "L04 · Negotiation Styles in IT Projects",
+    "src": "Lecture 04 · Section 6.1",
+    "text": "In IT project management, which negotiation style focuses on expanding the pie, identifying win-win trade-offs (e.g., trading delivery date flexibility for added automated testing coverage), and maintaining long-term collaborative partner relationships?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Distributive / Zero-sum bargaining",
+      "Integrative / Collaborative bargaining",
+      "Aggressive / Coercive bargaining",
+      "Avoidance bargaining",
+      "Submissive concession"
+    ],
+    "ans": [1],
+    "exp": "Integrative (collaborative) negotiation focuses on shared interests and mutual value creation (win-win), contrasting with Distributive bargaining where one party's gain is viewed as the other party's direct loss (win-lose)."
+  },
+  {
+    "topic": "L04 · Big Five Personality Traits (OCEAN)",
+    "src": "Lecture 04 · Section 8.1",
+    "text": "The Big Five (OCEAN) personality model includes Openness, Conscientiousness, Extraversion, Agreeableness, and Neuroticism (Emotional Stability). A software QA tester who is exceptionally thorough, systematic, detail-oriented, and reliable in documenting bug reproduction steps scores highest on:",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Extraversion",
+      "Conscientiousness",
+      "Agreeableness",
+      "Neuroticism",
+      "Machiavellianism"
+    ],
+    "ans": [1],
+    "exp": "Conscientiousness reflects self-discipline, organization, dependability, attention to detail, and goal-directed persistence. High conscientiousness is strongly correlated with meticulous QA testing, code reliability, and adherence to engineering standards."
+  },
+  {
+    "topic": "L05 · Financial Accounting Fundamentals",
+    "src": "Lecture 05 · Sections 1.1–1.3",
+    "text": "Financial accounting is defined as the process of recording, classifying, summarizing, and reporting financial transactions. How does it fundamentally differ from Management Accounting?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Financial accounting prepares standardized historical financial statements (Balance Sheet, Income Statement, Cash Flow Statement) primarily for external stakeholders (investors, lenders, tax authorities), whereas management accounting prepares flexible, forward-looking operational reports (budgets, forecasts, cost variance) for internal managerial decisions.",
+      "Financial accounting is exclusively for internal software engineers, while management accounting is published on the national stock exchange.",
+      "Financial accounting operates exclusively on a cash basis, while management accounting uses double-entry bookkeeping.",
+      "Financial accounting ignores costs and focuses only on employee headcount.",
+      "Both disciplines are identical and governed strictly by statutory company tax auditors."
+    ],
+    "ans": [0],
+    "exp": "Financial accounting is designed primarily for external users (investors, banks, creditors, regulators), governed by standardized accounting frameworks (IFRS/SLFRS), and reports historical financial performance and position. Management accounting provides forward-looking, flexible internal reports (budgets, cost calculations, project estimates) to help managers make operational decisions."
+  },
+  {
+    "topic": "L05 · Accrual vs Cash Accounting",
+    "src": "Lecture 05 · Section 1.4",
+    "text": "On December 20, 2025, an IT firm signs a software contract and delivers customized code worth LKR 4,000,000. The corporate client receives an invoice with 45-day payment terms and will remit payment on February 5, 2026. Under Accrual Accounting, when must the LKR 4,000,000 revenue be recognized?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "On February 5, 2026, when the cash is deposited into the company bank account.",
+      "In December 2025, because revenue was earned when the service/code was delivered.",
+      "Spread equally over the next 10 years.",
+      "It must never be recognized because it was not paid in gold.",
+      "On January 1, 2026, as an opening equity balance."
+    ],
+    "ans": [1],
+    "exp": "Accrual accounting dictates that revenues are recognized when earned (when goods or services are delivered to the customer) and expenses when incurred, regardless of the timing of cash receipts or disbursements. Under Cash basis, it would only be recognized on Feb 5, 2026."
+  },
+  {
+    "topic": "L05 · The Fundamental Accounting Equation",
+    "src": "Lecture 05 · Section 2.1",
+    "text": "What is the Fundamental Accounting Equation that governs the double-entry balance sheet?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Assets = Liabilities + Equity",
+      "Assets = Liabilities − Equity",
+      "Equity = Assets + Liabilities",
+      "Net Profit = Current Assets ÷ Current Liabilities",
+      "Assets = Cash Flow × Revenue"
+    ],
+    "ans": [0],
+    "exp": "The foundational equation of financial accounting is: Assets = Liabilities + Equity (or Net Assets = Total Assets − Total Liabilities = Equity)."
+  },
+  {
+    "topic": "L05 · Accounting Equation & Balance Sheet",
+    "src": "Lecture 05 · Sections 2.1–2.4",
+    "text": "Which statements regarding the Fundamental Accounting Equation and the Balance Sheet (Statement of Financial Position) are correct? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "The fundamental accounting equation is Assets = Liabilities + Equity.",
+      "The Balance Sheet provides a financial snapshot of an enterprise at a specific point in time, unlike the Income Statement which measures performance over an accounting period.",
+      "Current Assets are economic resources expected to be converted into cash, sold, or consumed within one operating cycle or one year (e.g., Cash, Trade Receivables, Short-term Prepayments).",
+      "Non-Current Liabilities represent financial obligations due after more than one year (e.g., 5-year bank term loans, long-term debentures).",
+      "If a company purchases LKR 2,000,000 worth of computer servers on 30-day credit from a supplier, Total Assets increase by LKR 2,000,000 and Total Liabilities increase by LKR 2,000,000, maintaining accounting balance."
+    ],
+    "ans": [0, 1, 2, 3, 4],
+    "exp": "All five statements are correct. The Balance Sheet satisfies Assets = Liabilities + Equity at an exact date. Current items operate within one year; non-current items extend beyond one year. Buying servers on credit increases both Non-Current Assets (Equipment) and Current Liabilities (Trade Payables/Creditors) by LKR 2,000,000, balancing the equation."
+  },
+  {
+    "topic": "L05 · Double-Entry Transaction Analysis",
+    "src": "Lecture 05 · Section 2.2",
+    "text": "A tech founder issues new company equity shares to angel investors, receiving LKR 10,000,000 in cash in the company's bank account. How does this transaction affect the accounting equation?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Current Assets (Cash) increase by LKR 10M, and Total Equity (Share Capital) increases by LKR 10M.",
+      "Current Assets (Cash) increase by LKR 10M, and Current Liabilities increase by LKR 10M.",
+      "Total Assets decrease by LKR 10M, and Net Profit increases by LKR 10M.",
+      "Non-Current Assets increase by LKR 10M, and Equity decreases by LKR 10M.",
+      "Only the Cash Flow statement changes; the balance sheet remains unaffected."
+    ],
+    "ans": [0],
+    "exp": "The transaction debits Cash (increasing Current Assets by 10M) and credits Share Capital (increasing Shareholders' Equity by 10M). Assets = Liabilities + Equity remains in perfect balance: +10M Assets = 0 Liabilities + 10M Equity."
+  },
+  {
+    "topic": "L05 · Income Statement (P&L) Structure",
+    "src": "Lecture 05 · Section 3.1",
+    "text": "In the standard multi-step Income Statement, what is the formula to calculate Gross Profit and Operating Profit (EBIT)?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Gross Profit = Revenue − COGS; Operating Profit (EBIT) = Gross Profit − Operating Expenses (OPEX)",
+      "Gross Profit = Revenue + COGS; Operating Profit = Net Profit − Tax",
+      "Gross Profit = Current Assets − Current Liabilities; Operating Profit = Total Assets ÷ Equity",
+      "Gross Profit = Net Profit + Interest; Operating Profit = COGS ÷ Revenue",
+      "Gross Profit = Revenue − Total Liabilities; Operating Profit = Gross Profit + Tax"
+    ],
+    "ans": [0],
+    "exp": "Gross Profit = Total Revenue minus Cost of Goods Sold (COGS). Operating Profit (Earnings Before Interest and Taxes / EBIT) = Gross Profit minus Operating Expenses (Sales, Marketing, Administrative, R&D expenses and Depreciation)."
+  },
+  {
+    "topic": "L05 · Income Statement (P&L) Calculation",
+    "src": "Lecture 05 · Sections 3.1–3.4",
+    "text": "An IT enterprise presents the following financial results for the year ended 31 December 2025:\n• Software Revenue: LKR 50,000,000\n• Cost of Goods Sold (Hosting, Direct Cloud Costs & Developer Delivery): LKR 20,000,000\n• Operating Expenses (Sales, Marketing, HR, Admin): LKR 12,000,000\n• Depreciation Expense: LKR 3,000,000\n• Interest Expense on Bank Loan: LKR 2,000,000\n• Income Tax Rate: 20%\nWhat are the company's Gross Profit, Operating Profit (EBIT), and Net Profit after tax?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Gross Profit: LKR 30,000,000; Operating Profit (EBIT): LKR 15,000,000; Net Profit: LKR 10,400,000",
+      "Gross Profit: LKR 35,000,000; Operating Profit (EBIT): LKR 18,000,000; Net Profit: LKR 12,800,000",
+      "Gross Profit: LKR 30,000,000; Operating Profit (EBIT): LKR 12,000,000; Net Profit: LKR 8,000,000",
+      "Gross Profit: LKR 50,000,000; Operating Profit (EBIT): LKR 30,000,000; Net Profit: LKR 15,000,000",
+      "Gross Profit: LKR 20,000,000; Operating Profit (EBIT): LKR 10,000,000; Net Profit: LKR 6,400,000"
+    ],
+    "ans": [0],
+    "exp": "Step-by-step Income Statement calculation:\n1. Gross Profit = Revenue − COGS = 50M − 20M = LKR 30,000,000.\n2. Operating Profit (EBIT) = Gross Profit − Operating Expenses − Depreciation = 30M − 12M − 3M = LKR 15,000,000.\n3. Profit Before Tax (EBT) = EBIT − Interest = 15M − 2M = LKR 13,000,000.\n4. Tax (20%) = 13M × 0.20 = LKR 2,600,000.\n5. Net Profit = EBT − Tax = 13M − 2.6M = LKR 10,400,000."
+  },
+  {
+    "topic": "L05 · Cash Flow Statement & Profit vs Cash",
+    "src": "Lecture 05 · Sections 4.1–4.3",
+    "text": "Which statements regarding the Cash Flow Statement and why 'Profit ≠ Cash' are correct? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Under accrual accounting, revenue is recognized when earned and expenses when incurred, regardless of when cash is actually received or paid.",
+      "A company can report a healthy Net Profit on its Income Statement while facing an acute cash shortage (insolvency) if major sales were made on credit and receivables remain uncollected.",
+      "Depreciation is an operating expense that reduces accounting profit on the Income Statement, but it is a non-cash expense that does not involve an immediate cash outflow.",
+      "The Cash Flow Statement categorizes cash movements into three activities: Operating Activities, Investing Activities, and Financing Activities.",
+      "Cash flow from Financing Activities reflects the purchase and disposal of long-term property, plant, and equipment."
+    ],
+    "ans": [0, 1, 2, 3],
+    "exp": "Options A, B, C, and D are correct. Option E is false because buying and selling long-term capital assets (hardware, property) are classified under Investing Activities; Financing Activities involve equity, share issuance, dividends, and bank borrowings."
+  },
+  {
+    "topic": "L05 · Cash Flow Activity Classification",
+    "src": "Lecture 05 · Section 4.2",
+    "text": "An IT company engages in the following cash transactions:\n(1) Pays monthly salaries to developers (LKR 4M);\n(2) Purchases an office building for its engineering headquarters (LKR 50M);\n(3) Repays the principal on a 3-year bank loan (LKR 10M).\nHow are transactions (1), (2), and (3) classified on the Statement of Cash Flows?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "(1) Operating, (2) Financing, (3) Investing",
+      "(1) Operating, (2) Investing, (3) Financing",
+      "(1) Investing, (2) Operating, (3) Financing",
+      "(1) Financing, (2) Investing, (3) Operating",
+      "(1) Operating, (2) Operating, (3) Operating"
+    ],
+    "ans": [1],
+    "exp": "(1) Salaries are day-to-day business operations → Operating Activities. (2) Buying fixed assets (property, plant, equipment) → Investing Activities. (3) Repaying debt principal or issuing stock → Financing Activities."
+  },
+  {
+    "topic": "L05 · Liquidity & Profitability Ratio Calculations",
+    "src": "Lecture 05 · Sections 6.1–6.4",
+    "text": "A tech company presents the following financial balances:\n• Cash & Cash Equivalents: LKR 4,000,000\n• Trade Receivables (Debtors): LKR 6,000,000\n• Inventory (Hardware stock): LKR 5,000,000\n• Current Liabilities: LKR 10,000,000\n• Total Revenue: LKR 40,000,000\n• Net Profit: LKR 6,000,000\nWhat are the company's Current Ratio, Quick Ratio (Acid-Test), and Net Profit Margin?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Current Ratio = 1.50; Quick Ratio = 1.00; Net Profit Margin = 15.0%",
+      "Current Ratio = 2.00; Quick Ratio = 1.50; Net Profit Margin = 20.0%",
+      "Current Ratio = 1.00; Quick Ratio = 0.50; Net Profit Margin = 10.0%",
+      "Current Ratio = 1.50; Quick Ratio = 1.50; Net Profit Margin = 25.0%",
+      "Current Ratio = 0.80; Quick Ratio = 0.40; Net Profit Margin = 12.0%"
+    ],
+    "ans": [0],
+    "exp": "Step-by-step ratio calculations:\n1. Current Assets = Cash + Receivables + Inventory = 4M + 6M + 5M = LKR 15,000,000.\n2. Current Ratio = Current Assets / Current Liabilities = 15,000,000 / 10,000,000 = 1.50.\n3. Quick Ratio = (Current Assets − Inventory) / Current Liabilities = (15M − 5M) / 10M = 10M / 10M = 1.00.\n4. Net Profit Margin = (Net Profit / Total Revenue) × 100% = (6,000,000 / 40,000,000) × 100% = 15.0%."
+  },
+  {
+    "topic": "L05 · Quick Ratio & Inventory Liquidity",
+    "src": "Lecture 05 · Section 6.2",
+    "text": "Why does the Quick Ratio (Acid-Test) exclude Inventory from Current Assets when assessing immediate short-term liquidity?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Because inventory is an intangible asset that has zero monetary worth.",
+      "Because inventory is typically the least liquid current asset and cannot be converted into cash instantly without risk of discounting or delay.",
+      "Because inventory belongs strictly to the government tax department.",
+      "Because accounting rules require inventory to be listed on the income statement only.",
+      "Because inventory includes trade receivables."
+    ],
+    "ans": [1],
+    "exp": "Inventory is deducted from current assets in the Quick Ratio because inventory takes time to sell, and in a financial crisis, forced rapid liquidation often results in severe losses or discounts. Cash and receivables represent immediate quick assets."
+  },
+  {
+    "topic": "L05 · Solvency, Efficiency & Financial Health",
+    "src": "Lecture 05 · Sections 6.4–6.6",
+    "text": "Which statements regarding financial ratios and enterprise health analysis from Lecture 05 are correct? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "The Debt-to-Equity ratio measures financial gearing/leverage, evaluating the proportion of borrowed funds relative to owners' equity capital.",
+      "A very high gearing ratio implies higher financial risk, because the company has mandatory fixed debt interest obligations regardless of profit fluctuations.",
+      "Return on Equity (ROE) measures how effectively management uses shareholders' capital to generate net profit (ROE = Net Profit / Total Equity × 100%).",
+      "If a company's Quick Ratio is significantly below 1.0, it may struggle to pay immediate short-term obligations without having to liquidate illiquid inventory.",
+      "Financial statements capture 100% of an enterprise's true competitive value, including employee technical expertise, intellectual goodwill, and client brand loyalty."
+    ],
+    "ans": [0, 1, 2, 3],
+    "exp": "Options A, B, C, and D are correct. Option E is false: the lecture notes explicitly highlight that financial statements have limitations and do not record many critical intangible assets—such as employee software engineering skills, organizational culture, brand trust, and customer goodwill—on the balance sheet."
+  },
+  {
+    "topic": "L05 · Return on Equity (ROE) & Return on Assets (ROA)",
+    "src": "Lecture 05 · Section 6.3",
+    "text": "An enterprise has Total Assets of LKR 80,000,000, Total Shareholders' Equity of LKR 50,000,000, and earns a Net Profit of LKR 10,000,000. What are the company's Return on Assets (ROA) and Return on Equity (ROE)?",
+    "table": null,
+    "code": null,
+    "opts": [
+      "ROA = 12.5%; ROE = 20.0%",
+      "ROA = 20.0%; ROE = 12.5%",
+      "ROA = 10.0%; ROE = 10.0%",
+      "ROA = 25.0%; ROE = 50.0%",
+      "ROA = 8.0%; ROE = 15.0%"
+    ],
+    "ans": [0],
+    "exp": "1. ROA = (Net Profit / Total Assets) × 100% = (10,000,000 / 80,000,000) × 100% = 12.5%.\n2. ROE = (Net Profit / Total Equity) × 100% = (10,000,000 / 50,000,000) × 100% = 20.0%."
+  },
+  {
+    "topic": "L05 · CapEx vs OpEx in IT Decisions",
+    "src": "Lecture 05 · Section 7.1",
+    "text": "A Chief Technology Officer compares building an on-premise private data center versus deploying cloud infrastructure on AWS/Azure. Which statement correctly categorizes the financial accounting impact of these two choices? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Purchasing physical servers and cooling infrastructure is Capital Expenditure (CapEx), recorded as Non-Current Assets on the Balance Sheet and depreciated over several years.",
+      "Monthly cloud subscription fees (e.g., AWS pay-as-you-go) are Operating Expenditures (OpEx), recorded directly as an operating expense on the Income Statement in the period incurred.",
+      "Transitioning from CapEx to OpEx reduces upfront cash outlays and frees working capital, but requires continuous operational cost monitoring.",
+      "CapEx immediately reduces Net Profit by 100% of the equipment purchase cost on the day the check is written.",
+      "OpEx items appear permanently on the Balance Sheet under Long-term Liabilities."
+    ],
+    "ans": [0, 1, 2],
+    "exp": "Options A, B, and C are correct accounting concepts. Option D is false because capital expenditures are capitalized on the balance sheet as assets and expensed gradually over time via Depreciation, rather than written off in full on day one. Option E is false because OpEx is an expense on the Income Statement."
+  },
+  {
+    "topic": "L05 · Limitations of Financial Accounting",
+    "src": "Lecture 05 · Section 1.6",
+    "text": "What are recognized limitations of traditional financial statements when evaluating modern digital and IT companies? (Select all that apply)",
+    "table": null,
+    "code": null,
+    "opts": [
+      "Financial statements are historical reports showing past performance, not guarantees of future innovation or market survival.",
+      "Critical intangible assets—such as developer programming expertise, algorithmic patents created in-house, and customer goodwill—frequently do not appear on the balance sheet.",
+      "Accounting figures rely on management estimates and judgment (such as depreciation periods and provisions for bad debts).",
+      "Financial statements are legally prohibited from displaying any numbers or currency figures.",
+      "Inflation can distort historical cost asset values over time."
+    ],
+    "ans": [0, 1, 2, 4],
+    "exp": "Options A, B, C, and E are explicit limitations highlighted in the lecture. Option D is absurd."
+  }
+]}</script>
+<script type="application/json" id="savedState"></script>
+<script>
+(function(){
+"use strict";
+var DATA = JSON.parse(document.getElementById('quizData').textContent);
+var Q = DATA.questions, N = Q.length, LETTERS = 'ABCDE';
+var PREFIX = 'it3120mcq:' + DATA.setId + ':';
+var S, results = null;
+function $(s, r){ return (r || document).querySelector(s); }
+function $$(s, r){ return Array.prototype.slice.call((r || document).querySelectorAll(s)); }
+
+/* ---------- storage ---------- */
+function lsGet(k){ try { var v = localStorage.getItem(k); return v ? JSON.parse(v) : null; } catch(e){ return null; } }
+function lsSet(k, v){ try { localStorage.setItem(k, JSON.stringify(v)); } catch(e){} }
+function newState(keep){
+  return { v:1, setId:DATA.setId,
+    attemptId: Date.now().toString(36) + Math.random().toString(36).slice(2,7),
+    sid: keep ? keep.sid : '', name: keep ? keep.name : '',
+    answers:{}, flags:{}, submitted:false, startedAt:null, submittedAt:null,
+    view:'one', current:0, filter:'all', updatedAt:Date.now() };
+}
+function valid(st){ return st && st.setId === DATA.setId && st.attemptId && typeof st.answers === 'object'; }
+function loadState(){
+  var emb = null;
+  try { var t = document.getElementById('savedState').textContent.trim(); if (t) emb = JSON.parse(t); } catch(e){}
+  if (valid(emb)) {
+    var ls = lsGet(PREFIX + emb.attemptId);
+    return (valid(ls) && ls.updatedAt > emb.updatedAt) ? ls : emb;
+  }
+  var cur = lsGet(PREFIX + 'current');
+  if (cur) { var st = lsGet(PREFIX + cur); if (valid(st)) return st; }
+  return newState();
+}
+function save(){ S.updatedAt = Date.now(); lsSet(PREFIX + S.attemptId, S); lsSet(PREFIX + 'current', S.attemptId); }
+function touch(){ if (!S.startedAt) S.startedAt = Date.now(); }
+
+/* ---------- build cards ---------- */
+function isMulti(q){ return q.ans.length > 1; }
+function buildCards(){
+  var wrap = $('#questions'); wrap.innerHTML = '';
+  Q.forEach(function(q, i){
+    var multi = isMulti(q), type = multi ? 'checkbox' : 'radio';
+    var art = document.createElement('article');
+    art.className = 'q'; art.id = 'q-' + (i+1); art.dataset.i = i;
+    var h = '<div class="q-head"><span class="q-num">Question ' + (i+1) + ' <small>of ' + N + '</small></span>' +
+      '<span class="chip">' + q.topic + '</span>' +
+      (multi ? '<span class="badge multi">Multiple answers · select all that apply</span>'
+             : '<span class="badge single">Single answer</span>') +
+      '<button type="button" class="flag-btn" data-i="' + i + '" aria-pressed="false">⚑ Flag</button></div>' +
+      '<div class="q-text" id="qt-' + i + '">' + q.text.replace(/\n/g, '<br>') + '</div>' +
+      (q.table ? '<div class="tbl">' + q.table + '</div>' : '') +
+      (q.code ? '<pre><code>' + q.code + '</code></pre>' : '') +
+      '<div class="opts" role="group" aria-labelledby="qt-' + i + '">';
+    q.opts.forEach(function(o, j){
+      h += '<label class="opt" data-j="' + j + '"><input type="' + type + '" name="q' + i + '" value="' + j + '" data-q="' + i + '">' +
+           '<span class="L">' + LETTERS[j] + '</span><span class="T">' + o + '</span><span class="mark"></span></label>';
+    });
+    h += '</div><div class="q-foot"><span class="sel-count"></span>' +
+         '<button type="button" class="clear-btn" data-i="' + i + '">Clear selection</button></div>' +
+         '<div class="feedback" hidden></div>';
+    art.innerHTML = h;
+    wrap.appendChild(art);
+  });
+  var nav = $('#nav'); nav.innerHTML = '';
+  for (var i = 0; i < N; i++) {
+    var b = document.createElement('button');
+    b.type = 'button'; b.textContent = i+1; b.dataset.i = i;
+    b.setAttribute('aria-label', 'Go to question ' + (i+1));
+    nav.appendChild(b);
+  }
+}
+
+/* ---------- sync UI from state ---------- */
+function syncCard(i){
+  var card = $('#q-' + (i+1)), sel = S.answers[i] || [];
+  $$('input', card).forEach(function(inp){ inp.checked = sel.indexOf(+inp.value) >= 0; inp.disabled = S.submitted; });
+  $$('.opt', card).forEach(function(l){ l.classList.toggle('sel', sel.indexOf(+l.dataset.j) >= 0); });
+  card.classList.toggle('answered', sel.length > 0);
+  card.classList.toggle('flagged', !!S.flags[i]);
+  $('.flag-btn', card).setAttribute('aria-pressed', S.flags[i] ? 'true' : 'false');
+  $('.flag-btn', card).textContent = S.flags[i] ? '⚑ Flagged' : '⚑ Flag';
+  var multi = isMulti(Q[i]);
+  $('.sel-count', card).textContent = S.submitted ? '' :
+    (multi ? (sel.length ? sel.length + ' selected' : 'Select all that apply') : (sel.length ? '1 selected' : 'Select one'));
+  $('.clear-btn', card).hidden = S.submitted || !sel.length;
+}
+function answeredCount(){ var c = 0; for (var i = 0; i < N; i++) if ((S.answers[i] || []).length) c++; return c; }
+function syncStatus(){
+  var a = answeredCount(), f = 0, sA = 0, sT = 0, mA = 0, mT = 0;
+  for (var i = 0; i < N; i++) {
+    if (S.flags[i]) f++;
+    var done = (S.answers[i] || []).length > 0;
+    if (isMulti(Q[i])) { mT++; if (done) mA++; } else { sT++; if (done) sA++; }
+  }
+  $('#cntAns').textContent = a; $('#cntLeft').textContent = N - a; $('#cntFlag').textContent = f;
+  $('#progBar').style.width = (a / N * 100) + '%';
+  $('#miniBar').style.width = (a / N * 100) + '%';
+  $('#mbarFill').style.width = (a / N * 100) + '%';
+  $('#mbarTxt').textContent = S.submitted && results ? ('Score ' + results.score + '/' + N) : (a + '/' + N + ' done' + (f ? ' · ⚑' + f : ''));
+  $('#miniTxt').textContent = S.submitted && results ? ('Score ' + results.score + '/' + N) : (a + '/' + N + ' answered');
+  $('#splitTxt').textContent = 'Single: ' + sA + '/' + sT + ' done · Multi: ' + mA + '/' + mT + ' done';
+  $$('#nav button').forEach(function(b){
+    var i = +b.dataset.i;
+    b.className = '';
+    if (S.submitted && results) b.classList.add('r-' + results.per[i].status);
+    else if ((S.answers[i] || []).length) b.classList.add('ans');
+    if (S.flags[i]) b.classList.add('flg');
+    if (i === S.current) b.classList.add('cur');
+  });
+  $('#legend').innerHTML = S.submitted
+    ? '<span><i style="background:var(--ok);border-color:var(--ok)"></i>Correct</span><span><i style="background:var(--part);border-color:var(--part)"></i>Partly right</span><span><i style="background:var(--bad);border-color:var(--bad)"></i>Wrong</span><span><i style="border:2px dashed var(--bad)"></i>Skipped</span>'
+    : '<span><i style="background:var(--navy);border-color:var(--navy)"></i>Answered</span><span><i></i>Not yet</span><span><i style="background:var(--orange);border-color:var(--orange);border-radius:50%"></i>Flagged</span><span><i style="outline:2px solid var(--orange)"></i>Current</span>';
+  $('#submitWrap').innerHTML = S.submitted
+    ? '<button class="btn" type="button" data-act="download">Download HTML</button><button class="btn ghost" type="button" data-act="retry">Try again</button>'
+    : '<button class="btn orange" type="button" data-act="submit">Submit &amp; check marks</button>';
+}
+function syncView(){
+  var b = document.body;
+  b.classList.toggle('mode-one', S.view === 'one');
+  b.classList.toggle('mode-all', S.view !== 'one');
+  b.classList.toggle('submitted', S.submitted);
+  b.classList.toggle('filter-wrong', S.submitted && S.filter === 'wrong' && S.view !== 'one');
+  $$('[data-view]').forEach(function(x){ x.classList.toggle('on', x.dataset.view === S.view); });
+  $$('[data-filter]').forEach(function(x){ x.classList.toggle('on', x.dataset.filter === S.filter); });
+  $('#filterSeg').hidden = !(S.submitted && S.view !== 'one');
+  $('#kbdHint').hidden = S.view !== 'one';
+  $$('.q').forEach(function(c){ c.classList.toggle('current', +c.dataset.i === S.current); });
+  $('#whereTxt').textContent = 'Question ' + (S.current+1) + ' of ' + N;
+  $('#prevBtn').disabled = S.current === 0;
+  var last = S.current === N - 1;
+  $('#nextBtn').textContent = last ? (S.submitted ? 'Back to results ↑' : 'Review & submit') : 'Next →';
+}
+function syncAll(){
+  for (var i = 0; i < N; i++) syncCard(i);
+  if (S.submitted) applyResults();
+  syncStatus(); syncView();
+  $('#sid').value = S.sid || ''; $('#sname').value = S.name || '';
+}
+
+/* ---------- grading ---------- */
+function grade(){
+  var per = [], score = 0, partial = 0, sC = 0, sT = 0, mC = 0, mT = 0, skipped = 0, topics = {};
+  Q.forEach(function(q, i){
+    var sel = S.answers[i] || [], hits = 0, wrong = 0;
+    sel.forEach(function(j){ if (q.ans.indexOf(j) >= 0) hits++; else wrong++; });
+    var exact = hits === q.ans.length && wrong === 0;
+    var p = exact ? 1 : Math.max(0, (hits - wrong) / q.ans.length);
+    var status = !sel.length ? 'skip' : exact ? 'ok' : (isMulti(q) && hits > 0 ? 'part' : 'bad');
+    if (!sel.length) skipped++;
+    if (exact) score++;
+    partial += p;
+    if (isMulti(q)) { mT++; if (exact) mC++; } else { sT++; if (exact) sC++; }
+    var topKey = q.topic.split('·')[0].trim();
+    var t = topics[topKey] || (topics[topKey] = { c:0, n:0 });
+    t.n++; if (exact) t.c++;
+    per.push({ status:status, hits:hits, wrong:wrong, partial:p });
+  });
+  return { per:per, score:score, partial:Math.round(partial * 10) / 10, sC:sC, sT:sT, mC:mC, mT:mT, skipped:skipped, topics:topics };
+}
+function applyResults(){
+  Q.forEach(function(q, i){
+    var card = $('#q-' + (i+1)), r = results.per[i], sel = S.answers[i] || [];
+    card.classList.remove('res-ok','res-bad','res-part','res-skip');
+    card.classList.add('res-' + r.status);
+    $$('.opt', card).forEach(function(l){
+      var j = +l.dataset.j, isC = q.ans.indexOf(j) >= 0, isS = sel.indexOf(j) >= 0, m = $('.mark', l);
+      l.classList.remove('c-sel','w-sel','miss');
+      m.textContent = '';
+      if (isC && isS) { l.classList.add('c-sel'); m.textContent = '✓ Correct'; }
+      else if (!isC && isS) { l.classList.add('w-sel'); m.textContent = '✗ Wrong'; }
+      else if (isC) { l.classList.add('miss'); m.textContent = 'Correct answer'; }
+    });
+    var fb = $('.feedback', card), key = q.ans.map(function(j){ return LETTERS[j]; }).join(', ');
+    var verdict = r.status === 'ok' ? 'Correct, 1 mark'
+      : r.status === 'skip' ? 'Not answered, 0 marks · Key: ' + key
+      : r.status === 'part' ? 'Partly right, 0 marks (' + r.hits + ' of ' + q.ans.length + ' correct options' + (r.wrong ? ', ' + r.wrong + ' wrong' : '') + ') · Key: ' + key
+      : 'Incorrect, 0 marks · Key: ' + key;
+    fb.className = 'feedback ' + (r.status === 'ok' ? 'ok' : r.status === 'part' ? 'part' : 'bad');
+    fb.innerHTML = '<div class="verdict">' + verdict + '</div><div>' + q.exp + '</div><div class="src">Source: ' + q.src + '</div>';
+    fb.hidden = false;
+  });
+}
+function pad(n){ return (n < 10 ? '0' : '') + n; }
+function fmt(ms){
+  var s = Math.max(0, Math.floor(ms / 1000)), h = Math.floor(s / 3600), m = Math.floor(s % 3600 / 60); s = s % 60;
+  return (h ? h + ':' : '') + pad(m) + ':' + pad(s);
+}
+function renderResults(){
+  var box = $('#results');
+  if (!S.submitted) { box.innerHTML = ''; return; }
+  var R = results, pct = Math.round(R.score / N * 100);
+  var col = pct >= 75 ? 'var(--ok)' : pct >= 50 ? 'var(--part)' : 'var(--bad)';
+  var msg = pct >= 75 ? 'Outstanding mastery across all 5 lectures. Excellent preparation for the MEM examination.'
+    : pct >= 50 ? 'Good pass level. Review the questions highlighted in red and amber below to strengthen weaker areas.'
+    : 'Below 50%. Review the lecture slides and notes for missed questions, then try another attempt.';
+  var time = S.startedAt ? fmt(S.submittedAt - S.startedAt) : '–';
+  var rows = Object.keys(R.topics).sort().map(function(k){
+    var t = R.topics[k], p = Math.round(t.c / t.n * 100), c = p >= 75 ? 'var(--ok)' : p >= 50 ? 'var(--part)' : 'var(--bad)';
+    var labelMap = {
+      'L01': 'Lecture 01 · Management Concepts (15 Qs)',
+      'L02': 'Lecture 02 · Introduction to Marketing (15 Qs)',
+      'L03': 'Lecture 03 · Introduction to Economics (15 Qs)',
+      'L04': 'Lecture 04 · Human Resource Management (15 Qs)',
+      'L05': 'Lecture 05 · Finance & Accounting (15 Qs)'
+    };
+    var label = labelMap[k] || k;
+    return '<tr><td>' + label + '</td><td>' + t.c + '/' + t.n + ' (' + p + '%)</td><td><div class="tbar"><i style="width:' + p + '%;background:' + c + '"></i></div></td></tr>';
+  }).join('');
+  var who = (S.sid ? S.sid : 'Student') + (S.name ? ' · ' + S.name : '');
+  box.innerHTML = '<section class="results" id="resultsBox"><div class="res-top">' +
+    '<div class="ring" style="--p:' + pct + ';--c:' + col + '"><div><div><b>' + R.score + '/' + N + '</b><br><span>' + pct + '%</span></div></div></div>' +
+    '<div class="res-main"><h2>Your Final Score</h2><p>' + msg + '</p><p>' + who + ' · submitted ' + new Date(S.submittedAt).toLocaleString() + '</p></div></div>' +
+    '<div class="res-stats"><div><b>' + R.partial + '</b><span>Partial-credit score</span></div>' +
+    '<div><b>' + R.sC + '/' + R.sT + '</b><span>Single correct</span></div>' +
+    '<div><b>' + R.mC + '/' + R.mT + '</b><span>Multiple correct</span></div>' +
+    '<div><b>' + time + '</b><span>Time taken</span></div></div>' +
+    '<h3 style="font-size:1rem">Performance by Lecture Topic</h3><table class="topics">' + rows + '</table>' +
+    (R.skipped ? '<p style="color:var(--bad);font-size:.88rem;margin:10px 0 0">' + R.skipped + ' question' + (R.skipped > 1 ? 's were' : ' was') + ' left unanswered.</p>' : '') +
+    '<div class="res-actions"><button class="btn" type="button" data-act="review-wrong">Review mistakes</button>' +
+    '<button class="btn ghost" type="button" data-act="review-all">Review all answers</button>' +
+    '<button class="btn ghost" type="button" data-act="download">Download HTML</button>' +
+    '<button class="btn ghost" type="button" data-act="print">Print / Save as PDF</button>' +
+    '<button class="btn ghost" type="button" data-act="retry">Try again</button></div></section>';
+}
+
+/* ---------- actions ---------- */
+function goTo(i, scroll){
+  S.current = Math.max(0, Math.min(N - 1, i)); save(); syncStatus(); syncView();
+  if (S.view === 'one') {
+    var top = $('#questions').getBoundingClientRect().top + window.scrollY - 80;
+    if (window.scrollY > top) window.scrollTo(0, top);
+  } else if (scroll !== false) {
+    var c = $('#q-' + (S.current+1));
+    if (c && c.offsetParent) c.scrollIntoView({ block:'start', behavior:'smooth' });
+  }
+}
+window.quizNav = function(i){ goTo(i); };
+
+function setView(v){
+  S.view = v; save(); syncView();
+  if (v === 'all') { var c = $('#q-' + (S.current+1)); if (c) c.scrollIntoView({ block:'start' }); }
+}
+function openModal(html){ $('#modal-body').innerHTML = html; $('#modal').hidden = false; var b = $('#modal .row .btn:last-child'); if (b) b.focus(); }
+function closeModal(){ $('#modal').hidden = true; $('#modal-body').innerHTML = ''; }
+function askSubmit(){
+  var a = answeredCount(), f = 0; for (var i in S.flags) if (S.flags[i]) f++;
+  var unans = []; for (var k = 0; k < N; k++) if (!(S.answers[k] || []).length) unans.push(k+1);
+  openModal('<h3 id="modalTitle">Submit your answers?</h3><p>You have answered <b>' + a + ' of ' + N + '</b> questions.</p>' +
+    (unans.length ? '<p style="color:var(--bad)">Unanswered: ' + unans.join(', ') + '. These score 0 marks.</p>' : '') +
+    (f ? '<p style="color:#c2410c">' + f + ' question' + (f > 1 ? 's are' : ' is') + ' flagged for review.</p>' : '') +
+    '<p>After submitting, you can view your detailed explanations and marks.</p>' +
+    '<div class="row"><button class="btn ghost" type="button" data-act="close">Keep working</button><button class="btn orange" type="button" data-act="confirm-submit">Submit Exam</button></div>');
+}
+function doSubmit(){
+  closeModal(); touch();
+  S.submitted = true; S.submittedAt = Date.now(); S.view = 'all'; S.filter = 'all';
+  results = grade(); save(); renderResults(); syncAll();
+  window.scrollTo(0, $('#results').getBoundingClientRect().top + window.scrollY - 80);
+}
+function askRetry(){
+  openModal('<h3 id="modalTitle">Start a new attempt?</h3><p>This will clear your current answers and marks. Download this page first if you want to keep a record of this attempt.</p>' +
+    '<div class="row"><button class="btn ghost" type="button" data-act="close">Cancel</button><button class="btn" type="button" data-act="confirm-retry">Start again</button></div>');
+}
+function doRetry(){ closeModal(); S = newState(S); results = null; save(); renderResults(); syncAll(); window.scrollTo(0, 0); toast('New practice attempt started'); }
+function toast(t){ var el = $('#toast'); el.textContent = t; el.classList.add('show'); clearTimeout(toast._t); toast._t = setTimeout(function(){ el.classList.remove('show'); }, 2600); }
+function safe(s){ return String(s || '').replace(/[^A-Za-z0-9_-]+/g, '').slice(0, 30); }
+function download(){
+  save();
+  document.getElementById('savedState').textContent = JSON.stringify(S).replace(/</g, '\\u003c');
+  var clone = document.documentElement.cloneNode(true);
+  ['#questions', '#nav', '#results', '#modal-body', '#legend', '#submitWrap'].forEach(function(s){ var e = clone.querySelector(s); if (e) e.innerHTML = ''; });
+  var m = clone.querySelector('#modal'); if (m) m.setAttribute('hidden', '');
+  var bd = clone.querySelector('body'); if (bd) bd.removeAttribute('class');
+  var html = '<!DOCTYPE html>\n' + clone.outerHTML;
+  var name = 'IT3120_MEM_MCQ_75Q_' + (safe(S.sid) || 'attempt') + '_' + (S.submitted && results ? results.score + 'of' + N : 'in-progress') + '.html';
+  var blob = new Blob([html], { type:'text/html' }), url = URL.createObjectURL(blob), a = document.createElement('a');
+  a.href = url; a.download = name; document.body.appendChild(a); a.click(); a.remove();
+  setTimeout(function(){ URL.revokeObjectURL(url); }, 1500);
+  toast('Downloaded ' + name);
+}
+
+/* ---------- event listeners ---------- */
+document.addEventListener('change', function(e){
+  var inp = e.target; if (!inp.matches || !inp.matches('.opt input') || S.submitted) return;
+  var i = +inp.dataset.q, card = $('#q-' + (i+1));
+  var sel = $$('input', card).filter(function(x){ return x.checked; }).map(function(x){ return +x.value; }).sort();
+  if (sel.length) S.answers[i] = sel; else delete S.answers[i];
+  touch(); S.current = i; save(); syncCard(i); syncStatus(); syncView();
+});
+document.addEventListener('click', function(e){
+  var t = e.target.closest ? e.target.closest('button') : null; if (!t) return;
+  if (t.matches('.flag-btn')) { var i = +t.dataset.i; if (S.flags[i]) delete S.flags[i]; else S.flags[i] = true; touch(); save(); syncCard(i); syncStatus(); return; }
+  if (t.matches('.clear-btn')) { var k = +t.dataset.i; delete S.answers[k]; save(); syncCard(k); syncStatus(); return; }
+  if (t.parentNode && t.parentNode.id === 'nav') { goTo(+t.dataset.i); return; }
+  if (t.dataset.view) { setView(t.dataset.view); return; }
+  if (t.dataset.filter) { S.filter = t.dataset.filter; save(); syncView(); return; }
+  switch (t.dataset.act || t.id) {
+    case 'submit': askSubmit(); break;
+    case 'confirm-submit': doSubmit(); break;
+    case 'close': closeModal(); break;
+    case 'retry': askRetry(); break;
+    case 'confirm-retry': doRetry(); break;
+    case 'download': case 'btnDownload': download(); break;
+    case 'print': case 'btnPrint': window.print(); break;
+    case 'review-wrong': S.view = 'all'; S.filter = 'wrong'; save(); syncView(); $('#questions').scrollIntoView({ block:'start' }); break;
+    case 'review-all': S.view = 'all'; S.filter = 'all'; save(); syncView(); $('#questions').scrollIntoView({ block:'start' }); break;
+    case 'jump': $('aside').scrollIntoView({ block:'start' }); break;
+    case 'prevBtn': goTo(S.current - 1); break;
+    case 'nextBtn':
+      if (S.current < N - 1) goTo(S.current + 1);
+      else if (S.submitted) window.scrollTo(0, 0);
+      else askSubmit();
+      break;
+  }
+});
+$('#modal').addEventListener('click', function(e){ if (e.target.id === 'modal') closeModal(); });
+document.addEventListener('keydown', function(e){
+  if (!$('#modal').hidden) { if (e.key === 'Escape') closeModal(); return; }
+  var tag = (e.target.tagName || '').toLowerCase();
+  if (tag === 'input' && e.target.type !== 'radio' && e.target.type !== 'checkbox') return;
+  if (tag === 'textarea' || e.ctrlKey || e.metaKey || e.altKey || S.view !== 'one') return;
+  if (e.key === 'ArrowRight') { e.preventDefault(); if (S.current < N - 1) goTo(S.current + 1); }
+  else if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(S.current - 1); }
+  else if (!S.submitted && /^[a-eA-E]$/.test(e.key)) {
+    var inp = $('#q-' + (S.current+1) + ' input[value="' + 'abcde'.indexOf(e.key.toLowerCase()) + '"]');
+    if (inp) { inp.checked = inp.type === 'radio' ? true : !inp.checked; inp.dispatchEvent(new Event('change', { bubbles:true })); }
+  }
+});
+$('#sid').addEventListener('input', function(){ S.sid = this.value.trim(); save(); });
+$('#sname').addEventListener('input', function(){ S.name = this.value.trim(); save(); });
+setInterval(function(){
+  $('#timer').textContent = S.startedAt ? fmt((S.submittedAt || Date.now()) - S.startedAt) : '00:00';
+}, 1000);
+
+/* ---------- init ---------- */
+S = loadState();
+if (S.current == null || S.current >= N) S.current = 0;
+buildCards();
+if (S.submitted) results = grade();
+renderResults();
+syncAll();
+$('#timer').textContent = S.startedAt ? fmt((S.submittedAt || Date.now()) - S.startedAt) : '00:00';
+save();
+})();
+</script>
+</body>
+</html>
