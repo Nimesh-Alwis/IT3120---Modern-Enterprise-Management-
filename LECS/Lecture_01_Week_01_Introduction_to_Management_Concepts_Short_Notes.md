@@ -38,6 +38,26 @@ An **organization** is a deliberately structured group of people who combine res
 - **Modern:** systems thinking, contingency thinking, data, quality, and continuous adaptation.
 - An organization is an **open system**: it obtains inputs from its environment, transforms them, and returns outputs while using feedback.
 
+### Organizational environment and behavior
+
+Managers must scan both the **internal environment** (employees, culture, structure, resources, systems) and the **external environment**:
+
+- **Task/specific environment:** customers, suppliers, competitors, regulators, and partners that directly affect operations.
+- **General environment:** economic, political/legal, technological, sociocultural, demographic, and global forces.
+- **Organizational Behavior (OB)** studies behavior at three levels: individual, group/team, and organization. It helps managers understand motivation, communication, leadership, conflict, culture, and performance.
+
+### Classical, behavioral, quantitative, and modern views
+
+| Approach | Main emphasis | Main contribution | Main limitation |
+|---|---|---|---|
+| Scientific management | Best method for each task; measurement and specialization | Higher operational efficiency | Can treat people like production inputs |
+| Administrative management | Organization-wide management principles | Fayol's management functions and formal coordination | May assume principles apply uniformly |
+| Bureaucratic management | Rules, hierarchy, specialization, merit | Consistency and accountability | Can become slow and inflexible |
+| Behavioral approach | Human needs, groups, leadership, motivation | Recognizes social and psychological factors | Human factors alone do not explain every result |
+| Quantitative approach | Models, data, optimization, forecasting | Better analytical decisions | Models depend on assumptions and data quality |
+| Systems approach | Interdependent parts and environment | Encourages whole-organization thinking | Relationships can be complex to model |
+| Contingency approach | Best action depends on the situation | Promotes context-sensitive decisions | Gives no single universal answer |
+
 ## Organizational structures
 
 - **Functional:** people grouped by specialist function; efficient but may create silos.
@@ -52,9 +72,41 @@ Power bases include **legitimate**, **reward**, **coercive**, **expert**, and **
 
 Motivation links individual needs with organizational goals. Managers can improve it through meaningful work, clear goals, feedback, recognition, fair rewards, participation, development, and supportive leadership.
 
+### Motivation models emphasized in the lecture
+
+- **Intrinsic motivation:** comes from interest, enjoyment, learning, achievement, autonomy, or personal growth; usually supports deeper and longer-lasting engagement.
+- **Extrinsic motivation:** comes from salary, bonus, promotion, prizes, praise, or avoidance of punishment.
+- **Maslow's hierarchy:** physiological → safety → social/belonging → esteem → self-actualization. An unmet lower need can dominate attention, but employees do not always move through the hierarchy in a rigid order.
+- **Herzberg's two-factor theory:** hygiene factors such as salary, policy, supervision, conditions, and security reduce dissatisfaction; motivators such as achievement, recognition, responsibility, growth, and meaningful work create satisfaction.
+- A manager should combine fair conditions and rewards with enriched work, recognition, development, and participation.
+
+## Management levels, skills, and roles — quick map
+
+| Level | Main time horizon | Typical focus | Most important skill tendency |
+|---|---|---|---|
+| Top management | Long term | Strategy, external environment, investment, organization-wide goals | Conceptual |
+| Middle management | Medium term | Convert strategy into departmental/tactical plans; coordinate units | Human + conceptual |
+| First-line management | Short term | Daily work, quality, schedules, direct supervision | Technical + human |
+
+Mintzberg's roles:
+
+- **Interpersonal:** figurehead, leader, liaison.
+- **Informational:** monitor, disseminator, spokesperson.
+- **Decisional:** entrepreneur, disturbance handler, resource allocator, negotiator.
+
+## Technology in modern management
+
+- Decision support: dashboards, business intelligence, analytics, forecasting, and AI.
+- Performance management: KPI systems and real-time monitoring.
+- Communication/collaboration: cloud documents, messaging, video meetings, and project tools.
+- Automation: workflows and robotic process automation reduce repetitive work.
+- Customer and resource management: CRM/ERP integrate information across the enterprise.
+- Technology improves speed and visibility, but managers remain responsible for data quality, privacy, bias, security, and final decisions.
+
 ## Exam reminders
 
 - Do not confuse efficiency with effectiveness.
 - Learn the four management functions in sequence and the control feedback loop.
 - Be able to classify a manager's action as a Mintzberg role, skill, or management function.
 - Compare structural alternatives by both advantage and limitation.
+- For a case, identify the management level, function, role, power base, motivation approach, and environmental factor involved.
