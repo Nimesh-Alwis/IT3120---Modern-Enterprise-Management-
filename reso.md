@@ -103,3 +103,23 @@ Activities දෙකක් අතර සම්බන්ධතාවය දැක
 **FF:** Activity **A** Finish වීමෙන් පසුව Activity **B** Finish කළ හැකියි.
 
 **SF:** Activity **A** Start වීමෙන් පසුව Activity **B** Finish කළ හැකියි.
+
+## 6. Scope and Integration Management – 3 Marks
+
+### Question
+
+The university requests an AI-based chatbot after the project scope has been approved. Explain three actions the project manager should take to evaluate and manage this change, considering its effects on scope, schedule, cost, and integration with existing modules.
+
+### Answer
+
+#### Assess the Change Impact
+
+Evaluate how the AI chatbot affects the project scope, schedule, cost, required resources, and integration with existing modules.
+
+#### Follow the Change Control Process
+
+Submit a formal change request and obtain approval from the Change Control Board (CCB) or authorized stakeholders before implementation.
+
+#### Update Project Plans and Integrate
+
+After approval, update the scope, schedule, and cost baselines. Then plan, develop, and test the chatbot's integration with the existing system modules.
