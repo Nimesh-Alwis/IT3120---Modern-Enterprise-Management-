@@ -221,3 +221,99 @@ Provide an easy-to-use digital marketplace that connects farmers directly with b
 #### Scaling Strategy
 
 After a successful pilot, expand the platform to other districts based on customer feedback and market demand.
+
+## 11. Case Study: SmartRecruit AI
+
+SmartRecruit AI (Pvt) Ltd is a Sri Lankan recruitment software company. Its AI platform collects CVs, contact details, qualifications, employment history, and assessment results to shortlist candidates.
+
+After six months, a client discovers systematically lower AI scores for certain applicant groups. A developer reports that third-party code was used without checking its licence conditions. A database administrator finds that applicant records are accessible to employees without a business need. Marketing proposes using applicant data to advertise unrelated training programmes without informing applicants. Management worries that fixing these issues will delay new features.
+
+### (a) Legal Issues – 4 Marks
+
+#### Question
+
+Identify four potential legal or regulatory issues and explain their significance.
+
+#### Answer in Simple English
+
+##### Data Privacy Violation
+
+Unauthorized access to applicant records may violate data-protection requirements and expose applicants' personal information.
+
+##### Copyright and Licensing
+
+Using third-party code without checking its licence may violate copyright law or software licence conditions.
+
+##### AI Discrimination
+
+Biased AI scores may lead to unfair recruitment decisions and possible discrimination-related legal issues.
+
+##### Unauthorized Data Use
+
+Using applicant data for unrelated marketing without a valid legal basis or proper notice may violate data-protection requirements.
+
+### (b) Privacy and Access Control – 4 Marks
+
+#### Question
+
+Recommend four practical data-protection and access-control measures.
+
+#### Answer in Simple English
+
+##### Role-Based Access Control (RBAC)
+
+Allow employees to access only the applicant data required to perform their jobs.
+
+##### Data Encryption
+
+Encrypt applicant data while it is stored and while it is being transmitted.
+
+##### Multi-Factor Authentication (MFA)
+
+Use MFA to reduce the risk of unauthorized account access.
+
+##### Access Monitoring and Auditing
+
+Maintain access logs and regularly review employee permissions to detect and prevent misuse.
+
+### (c) Ethical Responsibilities – 4 Marks
+
+#### Question
+
+Evaluate AI bias and secondary data use, and recommend corrective actions.
+
+#### Answer in Simple English
+
+##### AI Bias
+
+The AI system gives lower scores to certain applicant groups, which may cause unfair recruitment decisions.
+
+**Corrective Action:** Audit the training data and AI decisions, take steps to reduce bias, and introduce human review of recruitment decisions.
+
+##### Secondary Data Use
+
+Using applicant data for unrelated marketing without informing applicants is unethical and violates their privacy expectations.
+
+**Corrective Action:** Inform applicants, establish a valid legal basis, and obtain consent where required before using their data for marketing.
+
+### (d) Professional Ethics and Governance – 3 Marks
+
+#### Question
+
+Apply three relevant principles from the Computer Society of Sri Lanka (CSSL) Code of Ethics.
+
+#### Answer in Simple English
+
+##### Professionalism
+
+Protect applicants' rights, privacy, and welfare by preventing unfair AI decisions and unauthorized access to their data.
+
+##### Honesty
+
+Be transparent about AI bias, data usage, and software licensing issues. Do not hide these problems from stakeholders.
+
+##### Competence
+
+Ensure that developers use properly licensed software, test the AI system for fairness, and implement effective data-security measures.
+
+These principles are included in the **Computer Society of Sri Lanka (CSSL) Code of Ethics**.
