@@ -123,3 +123,101 @@ Submit a formal change request and obtain approval from the Change Control Board
 #### Update Project Plans and Integrate
 
 After approval, update the scope, schedule, and cost baselines. Then plan, develop, and test the chatbot's integration with the existing system modules.
+
+## 7. Opportunity and Feasibility – 4 Marks
+
+### Question
+
+Evaluate the technical, market, operational, and financial feasibility of the proposed application.
+
+### Answer
+
+#### Technical Feasibility
+
+The application can be developed using existing technologies. However, developing all the proposed features may be difficult with limited resources.
+
+#### Market Feasibility
+
+There is a potential market among farmers and buyers. However, existing supplier relationships and low digital literacy may reduce adoption of the application.
+
+#### Operational Feasibility
+
+The platform can improve buying and selling activities. However, unreliable delivery arrangements and limited digital skills may affect its daily operations.
+
+#### Financial Feasibility
+
+The startup has **Rs. 2 million**, while full development requires **Rs. 3.5 million**. Therefore, there is a funding gap of **Rs. 1.5 million**. Developing a **Minimum Viable Product (MVP)** is a suitable option within the available budget.
+
+## 8. Lean Startup and MVP – 4 Marks
+
+### Question
+
+Explain Lean Startup, propose three MVP features, and explain how customer feedback informs future development.
+
+### Answer in Simple English
+
+#### Lean Startup
+
+Lean Startup is an approach that develops a basic product, tests it with real customers, collects feedback, and improves it using the **Build–Measure–Learn** cycle.
+
+#### Three MVP Features for AgriConnect Lanka
+
+##### Product Listings
+
+Farmers can list their agricultural products with prices and available quantities.
+
+##### Product Search
+
+Buyers can search for available agricultural products.
+
+##### Basic Order Management
+
+Buyers can place orders, and farmers can view and manage those orders.
+
+#### How Feedback Informs Development
+
+Test the MVP with farmers and buyers in one district. Collect their feedback about usability, pricing, and ordering problems. Use this feedback to improve the application and decide which features should be developed next.
+
+## 9. Startup Risks – 4 Marks
+
+### Question
+
+Identify four significant startup risks and provide one mitigation measure for each risk.
+
+### Answer in Simple English
+
+#### Financial Risk
+
+**Mitigation Measure:** Start with a low-cost MVP to reduce development costs.
+
+#### Market Risk
+
+**Mitigation Measure:** Conduct market research and pilot testing to understand customer needs and attract buyers.
+
+#### Operational Risk
+
+**Mitigation Measure:** Partner with reliable delivery providers to ensure timely deliveries.
+
+#### Technology Adoption Risk
+
+**Mitigation Measure:** Provide a simple application interface and training for farmers.
+
+## 10. Business Model and Growth – 3 Marks
+
+### Question
+
+Recommend an initial target market, a value proposition, and one scaling strategy for the business.
+
+### Answer in Simple English
+
+#### Initial Target Market
+
+Target small-scale farmers and local restaurants in one district to test the platform.
+
+#### Value Proposition
+
+Provide an easy-to-use digital marketplace that connects farmers directly with buyers, offers transparent prices, and makes buying and selling easier.
+
+#### Scaling Strategy
+
+After a successful pilot, expand the platform to other districts based on customer feedback and market demand.
